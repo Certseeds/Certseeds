@@ -2,7 +2,7 @@
 
 I'm Certseeds
 
-- senior of SUSTech [senior](https://www.sustech.edu.cn/)
++ senior of [SUSTech](https://www.sustech.edu.cn/)
 
 [![Certseeds's github stats](https://github-readme-stats.vercel.app/api?username=Certseeds)](https://github.com/anuraghazra/github-readme-stats)
 

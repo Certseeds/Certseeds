@@ -1,0 +1,49 @@
+### 
+## @Github: https://github.com/Certseeds/words
+## @Organization: SUSTech
+## @Author: nanoseeds
+## @Date: 2021-05-28 21:09:09
+## @LastEditors: nanoseeds
+## @LastEditTime: 2021-05-28 21:14:21
+### 
+
+# Created by https://www.toptal.com/developers/gitignore/api/audio,video,docz
+# Edit at https://www.toptal.com/developers/gitignore?templates=audio,video,docz
+
+### Audio ###
+*.aif
+*.iff
+*.m3u
+*.m4a
+*.mid
+*.mp3
+*.mpa
+*.ra
+*.wav
+*.wma
+*.ogg
+*.flac
+
+### Docz ###
+.docz
+
+
+### Video ###
+*.3g2
+*.3gp
+*.asf
+*.asx
+*.avi
+*.flv
+*.mkv
+*.mov
+*.mp4
+*.mpg
+*.ogv
+*.rm
+*.swf
+*.vob
+*.wmv
+*.webm
+
+# End of https://www.toptal.com/developers/gitignore/api/audio,video,docz

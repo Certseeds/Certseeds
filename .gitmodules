@@ -1,0 +1,3 @@
+[submodule "binary"]
+	path = binary
+	url = git@github.com:Certseeds/words_binary.git

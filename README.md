@@ -2,7 +2,7 @@
 
 I'm Certseeds
 
-+ bachelor of [SUSTech](https://www.sustech.edu.cn/)
++ Bachelor of Engineering of [CSE](http://cse.sustech.edu.cn/cn/site/index/) in [SUSTech](https://www.sustech.edu.cn/) 
 
 <div>
   <a href="https://github.com/anuraghazra/github-readme-stats">

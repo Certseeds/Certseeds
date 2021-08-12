@@ -1,4 +1,7 @@
 {
+    "terminal.integrated.fontFamily":"SauceCodePro NF",
+    "editor.fontFamily":"SauceCodePro NF",
+    "debug.console.fontFamily": "SauceCodePro NF",
     "fileheader.configObj": {
         "createFileTime": true,
         "language": {

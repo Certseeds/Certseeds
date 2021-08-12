@@ -4,7 +4,7 @@
  * @Author: nanoseeds
  * @Date: 2021-08-11 00:27:18
  * @LastEditors: nanoseeds
- * @LastEditTime: 2021-08-11 01:21:21
+ * @LastEditTime: 2021-08-13 00:30:13
  * @License: CC-BY-NC-SA_V4_0 or any later version
  -->
 
@@ -37,4 +37,4 @@ Redis与HashMap的底层结构是类似的,都是第一维为数组,第二维为
 
 本文以Redis与HashMap的相似之处为引子,介绍了Redis与HashMap实现中的不同,分析了其内部设计的一些思路,以及不同定位带来的不同设计结果.
 
-注: 发布于GitHub的本文采取CC-BY-NC-SA-4.0 or any later version,保留在其他平台采取不同许可证的权利-由此导致的转发链路导致许可证不同问题,请到源发布平台转发来解决
+注: 发布于GitHub的本文采取CC-BY-NC-SA-4.0 or any later version,保留在其他平台采取不同许可证的权利-转发链路不同导致的许可证不同问题,请通过到源发布平台转发来解决.

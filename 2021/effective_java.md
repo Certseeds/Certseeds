@@ -4,11 +4,11 @@
  * @Author: nanoseeds
  * @Date: 2021-08-11 23:10:21
  * @LastEditors: nanoseeds
- * @LastEditTime: 2021-08-13 00:16:40
+ * @LastEditTime: 2021-08-13 00:30:06
    * @License: CC-BY-NC-SA_V4_0 or any later version 
    -->
 
-  # Effective Java阅读笔记
+# Effective Java阅读笔记
 
 ## Chapter 2 创建与销毁对象
 
@@ -83,3 +83,6 @@ try-with-resource提供了一种类似C++中RAII的使用体验,在try()中new�
 
 很显然的是,既然try-with-resource背后由编译期自动生成,还是自动调用的Finally块,那么实际上try-finally没有手动实现的必要了,要做的只是把所有的资源实现`Closeable`接口.
 
+### TODO
+
+注: 发布于GitHub的本文采取CC-BY-NC-SA-4.0 or any later version,保留在其他平台采取不同许可证的权利-转发链路不同导致的许可证不同问题,请通过到源发布平台转发来解决.

@@ -4,7 +4,7 @@
  * @Author: nanoseeds
  * @Date: 2021-08-11 23:10:21
  * @LastEditors: nanoseeds
- * @LastEditTime: 2021-08-19 23:08:06
+ * @LastEditTime: 2021-08-21 12:54:05
    * @License: CC-BY-NC-SA_V4_0 or any later version 
    -->
 
@@ -40,7 +40,7 @@
 
 ### 02-3 私有构造器或者枚举类型强化Singleton.
 
-常见的单例构造需要考虑是否懒加载,是否线程安全,但是还要考虑的是,反射以及反序列化时是否会影响单例,反射可以通过私有构造器抛出异常来阻止调用私有构造器,反序列化可以通过重写`readResolve()`来解决问题,但是归根结底,还是使用枚举类实现的成本最低,使用Java内部的机制,又能带来安全,解决反序列化/反射带来的问题.
+常见的单例构造需要考虑是否懒加载,是否线程安全,但是还要考虑的是,反射以及反序列化时是否会影响单例,反射可以通过私有构造器抛出异常来阻止调用私有构造器,反序列化可以通过重写`readResolve`来解决问题,但是归根结底,还是使用枚举类实现的成本最低,使用Java内部的机制,又能带来安全,解决反序列化/反射带来的问题.
 
 PS: 这里当然不是指的enum内嵌一个class或是class内嵌一个enum,而是指这个class本身把类型定义成enum.
 
@@ -85,6 +85,270 @@ try-with-resource提供了一种类似C++中RAII的使用体验,在try()中new�
 
 很显然的是,既然try-with-resource背后由编译期自动生成,还是自动调用的Finally块,那么实际上try-finally没有手动实现的必要了,要做的只是把所有的资源实现`Closeable`接口.
 
+## Chapter 03 常见方法
+
+### 03-10,11 equals方法, hashCode方法
+
+最佳实践之如何写equals,hashCode方法
+
+``` java
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class rule10_equals {
+
+    public static final class rule10_equals_class {
+        private final int x;
+        private final int y;
+        private final int z;
+        private final double time;
+        private final int hash;
+
+        private rule10_equals_class() {
+            this.time = (this.x = (this.y = (this.z = 0))) * 0.0f;
+            this.hash = 0;
+            throw new AssertionError("should not use default");
+        }
+
+        private rule10_equals_class(int x, int y, int z, double time) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.time = time;
+            this.hash = this.hashCode();
+        }
+
+        public static rule10_equals_class FOURTH(int x, int y, int z, double time) {
+            return new rule10_equals_class(x, y, z, time);
+        }
+
+        private int hash() {
+            return ((((31 + x) * 31 + y) * 31 + z)) * 31 + Double.hashCode(time);
+        }
+
+        public int hashCode() {
+            return this.hash;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == this) {
+                return true;
+            } else if (!(obj instanceof rule10_equals_class)) { // 好想用模式匹配语法
+                return false;
+            }
+            final var objc = (rule10_equals_class) obj;
+            return (objc.x == this.x) &&
+                    (objc.y == this.y) &&
+                    (objc.z == this.z) && Double.compare(objc.time, this.time) == 0;
+        }
+    }
+
+    @Test
+    public void test_自反性() {
+        final var obj1 = rule10_equals_class.FOURTH(1, 1, 4, 514.0d);
+        Assertions.assertEquals(obj1, obj1);
+        Assertions.assertEquals(obj1.hashCode(), obj1.hashCode());
+    }
+
+    @Test
+    public void test_null值() {
+        final var obj1 = rule10_equals_class.FOURTH(1, 1, 4, 514.0d);
+        Assertions.assertNotEquals(null, obj1);
+        Assertions.assertNotEquals(obj1, null);
+    }
+
+    @Test
+    public void test_对称性() {
+        final var obj1 = rule10_equals_class.FOURTH(1, 1, 4, 514.0d);
+        final var obj2 = rule10_equals_class.FOURTH(1, 1, 4, 514.0d);
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj2, obj1);
+        Assertions.assertEquals(obj2.hashCode(), obj1.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+    }
+
+    @Test
+    public void test_传递性() {
+        final var obj1 = rule10_equals_class.FOURTH(1, 1, 4, 514.0d);
+        final var obj2 = rule10_equals_class.FOURTH(1, 1, 4, 514.0d);
+        final var obj3 = rule10_equals_class.FOURTH(1, 1, 4, 514.0d);
+        Assertions.assertEquals(obj1, obj2);
+        Assertions.assertEquals(obj1.hashCode(), obj2.hashCode());
+        Assertions.assertEquals(obj2, obj3);
+        Assertions.assertEquals(obj2.hashCode(), obj3.hashCode());
+        Assertions.assertEquals(obj1, obj3);
+        Assertions.assertEquals(obj1.hashCode(), obj3.hashCode());
+    }
+}
+```
+
+对equals方法来说
+
+1. 判断了自身与自身相等
+2. 判断了类是否相同(顺带检查了null)
+3. 转换参数为正确类型(如果用了带有模式匹配的新JDK,就可以整合到2)
+4. 判断了每个关键域
+5. 天然满足对称性,自反性,传递性,一致性,非空性.
+
+hashCode也满足了对于相同对象散列码相同的特性,顺带还基于不可变实现了hashcode初始化求值,
+
+### 03-13 clone接口
+
+答案是Cloneable接口实现太差劲了,最好根本不实现这个接口,也不增加`clone()`方法,而是使用工厂方法,或者叫复制构造函数来实现相同效果.
+
+PS: c++在这个方面做得就好不少,提供了复制构造函数来实现复制.
+
+PSS: 硬要实现,建议内部直接报错.
+
+### 03-14 Comparable接口
+
+直接看代码
+
+``` java
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.StringJoiner;
+
+public final class rule14_comparable {
+    // 排序,很神奇吧
+    @Test
+    public void test() {
+        // final只限制了不能再给comparableList赋值
+        // 数组中元素仍可以发生变化
+        final var comparableList = new showComparable[]{
+                showComparable.newCompare(1, 1),
+                showComparable.newCompare(4, 5),
+                showComparable.newCompare(1, 4),
+                showComparable.newCompare(1, 9),
+                showComparable.newCompare(1, 9),
+                showComparable.newCompare(8, 1),
+                showComparable.newCompare(0, 4),
+        };
+        System.out.println(Arrays.toString(comparableList));
+        Arrays.sort(comparableList);
+        System.out.println(Arrays.toString(comparableList));
+        System.out.println(List.of(comparableList));
+    }
+
+    private final static class showComparable implements Comparable<showComparable> {
+        private final int x;
+        private final int y;
+
+        private showComparable() {
+            throw new AssertionError("should not use default");
+        }
+
+        private showComparable(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public static showComparable newCompare(int x, int y) {
+            return new showComparable(x, y);
+        }
+
+
+        /**
+         * @param o : a object
+         * @return: 如果this比o x更大,或者x想等情况下y更大,则返回1
+         * 若x,y相同,返回0,
+         * 否则返回-1
+         */
+        //@Override
+        public int compareTo(showComparable o) {
+            // 自反性, 可以保证
+            // 对称性, 可以保证
+            // 可传递, 可以保证
+            // obj1.compareTo(obj2) == 0 确保内部每一个元素进行compareTo都相同,可以保证
+            // (obj1.compareTo(obj2) == 0) == (obj1.equals(obj2)) 可以保证
+            // int,long这种整型可以用> <
+            // float,double就得用Float.compare,Double.compare了
+            // 整形用Integer.compare显得傻傻的,很不舒服
+            if (this.x > o.x || (this.x == o.x && this.y > o.y)) {
+                return 1;
+            } else if (this.x == o.x && this.y == o.y) {
+                return 0;
+            }
+            return -1;
+        }
+
+        private static final Comparator<showComparable> OLD_COMPARABLE_COMPARATOR = Comparator
+                .comparingInt((showComparable o) -> o.x) // 需要写类型,不优雅
+                .thenComparing(o -> o.y);
+        private static final Comparator<showComparable> COMPARABLE_COMPARATOR = Comparator
+                .<showComparable>comparingInt(o -> o.x) // 这样剥离类型更优雅
+                .thenComparing(o -> o.y);
+
+        //@Override
+        public int compareTo2(showComparable o) {
+            // 自反性, 可以保证
+            // 对称性, 可以保证
+            // 可传递, 可以保证
+            // obj1.compareTo(obj2) == 0 确保内部每一个元素进行compareTo都相同,可以保证
+            // (obj1.compareTo(obj2) == 0) == (obj1.equals(obj2)) 可以保证
+            // 主要用在那些想要自定义比较,但是无法重写要排序的类的地方,传一个比较函数过去而不需要对类本身进行修改
+            return COMPARABLE_COMPARATOR.compare(this, o);
+        }
+
+        @Override
+        public String toString() {
+            return new StringJoiner(", ", showComparable.class.getSimpleName() + "[", "]")
+                    .add("x=" + x)
+                    .add("y=" + y)
+                    .toString();
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == this) {
+                return true;
+            } else if (!(obj instanceof showComparable)) { // 好想用模式匹配语法
+                return false;
+            }
+            final var objc = (showComparable) obj;
+            return (objc.x == this.x) &&
+                    (objc.y == this.y);
+        }
+        @Override
+        public int hashCode() {
+            return 31 * x + y;
+        }
+    }
+}
+```
+
 ## Chapter 12 序列化
 
 ### 12-1 序列化*问题很大*
@@ -121,11 +385,11 @@ Serializable这种接口只有标记作用,其中没有默认实现,但是又有
 Serializable只在可信环境+可控数据下较为安全,不要将其作为对外交互的任何方式.
 
 PS: Serializable接口的设计太失败了,至少也得有`writeObject`,`readObject`,`getSerialVersionUID`这三个方法吧.
-PSS: 其实还是设计的锅,Interface之前没办法加入默认实现,所以没办法把这些方法加到接口内.现在积重难返 
+PSS: 其实还是设计的锅,Interface之前没办法加入默认实现,所以没办法把这些方法加到接口内.现在积重难返
 
 ### 12-3 使用自定义的序列化形式
 
-其实可以类比成,既然序列化形式应该尽量不使用,那么我们可以把序列化的格式转化成json,反序列化也是从json中反序列化,直接把所有属性都标明` transient`,全部手动转换.
+其实可以类比成,既然序列化形式应该尽量不使用,那么我们可以把序列化的格式转化成json,反序列化也是从json中反序列化,直接把所有属性都标明`transient`,全部手动转换.
 
 ### 12-4 使用保护性的`readObject`,`validateObject`
 
@@ -148,7 +412,7 @@ PSS: 其实还是设计的锅,Interface之前没办法加入默认实现,所以�
 
 由此可见,反射的攻击相当难办,最好还是想点别的办法.
 
-3. 反序列化,反序列化可以通过`readResolve()`来防御,但是这也是防君子不防小人,可以构造出序列化的流,其中将类的字段以`fake`类来代替,`fake`类内又引用类,`fake`类的`readResolve()`又返回被代替的字段的值,实现对反序列化的攻击.当然,最终的解决办法是不在类中放置任何可被藏身的字段-给所有字段加以`transient`,但是这样问题又来了,这样还搞什么序列化呢?
+3. 反序列化,反序列化可以通过`readResolve`来防御,但是这也是防君子不防小人,可以构造出序列化的流,其中将类的字段以`fake`类来代替,`fake`类内又引用类,`fake`类的`readResolve`又返回被代替的字段的值,实现对反序列化的攻击.当然,最终的解决办法是不在类中放置任何可被藏身的字段-给所有字段加以`transient`,但是这样问题又来了,这样还搞什么序列化呢?
 
 4. 构造器的攻击显然可以被忽略
 
@@ -156,12 +420,13 @@ PSS: 其实还是设计的锅,Interface之前没办法加入默认实现,所以�
 
 ### 12-6 考虑使用序列化代理代替序列化实例
 
-类内嵌一个proxy静态内部类,令外部类的`writeReplace()`(PS: 又一个接口里不提但是明显与接口有关的特殊方法)返回这个proxy静态代理类的示例,之后序列化生成的就是这个代理类,然后这个代理类的`readResolove()`调用外部类的构造器,来保证安全性.好处就是把`readObject`可以彻底放弃了,反序列化也导向了构造器,外部类自身也可以设置为final.
+类内嵌一个proxy静态内部类,令外部类的`writeReplace`(PS: 又一个接口里不提但是明显与接口有关的特殊方法)返回这个proxy静态代理类的示例,之后序列化生成的就是这个代理类,然后这个代理类的`readResolove`调用外部类的构造器,来保证安全性.好处就是把`readObject`可以彻底放弃了,反序列化也导向了构造器,外部类自身也可以设置为final.
 
 PS: 与单例无关
 
-PSS: 再次统计一下,Serializable接口的设计真的太失败了,至少也得有`getSerialVersionUID`,`readObject`,`writeObject`,`readResolve()`,`writeReplace()`这五个方法吧.
+PSS: 再次统计一下,Serializable接口的设计真的太失败了,至少也得有`getSerialVersionUID`,`readObject`,`writeObject`,`readResolve`,`writeReplace`,`readObjectNoData`这六个方法吧.
 
 ### TODO
 
 注: 发布于GitHub的本文采取CC-BY-NC-SA-4.0 or any later version,保留在其他平台采取不同许可证的权利-转发链路不同导致的许可证不同问题,请通过到源发布平台转发来解决.
+注2: 本文中所有代码部分采取MIT协议,保留在其他平台采取不同许可证的权利-转发链路不同导致的许可证不同问题,请通过到源发布平台转发来解决.

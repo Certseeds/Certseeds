@@ -4,7 +4,7 @@
  * @Author: nanoseeds
  * @Date: 2021-08-11 23:10:21
  * @LastEditors: nanoseeds
- * @LastEditTime: 2021-08-21 12:54:05
+ * @LastEditTime: 2021-08-21 13:26:15
    * @License: CC-BY-NC-SA_V4_0 or any later version 
    -->
 
@@ -286,7 +286,7 @@ public final class rule14_comparable {
          * 若x,y相同,返回0,
          * 否则返回-1
          */
-        //@Override
+        @Override
         public int compareTo(showComparable o) {
             // 自反性, 可以保证
             // 对称性, 可以保证
@@ -296,10 +296,11 @@ public final class rule14_comparable {
             // int,long这种整型可以用> <
             // float,double就得用Float.compare,Double.compare了
             // 整形用Integer.compare显得傻傻的,很不舒服
+            if (this.equals(o)) {
+                return 0;
+            }
             if (this.x > o.x || (this.x == o.x && this.y > o.y)) {
                 return 1;
-            } else if (this.x == o.x && this.y == o.y) {
-                return 0;
             }
             return -1;
         }
@@ -348,6 +349,26 @@ public final class rule14_comparable {
     }
 }
 ```
+
+## Chapter 04 类和接口
+
+### 04-15,16 类和成员的访问最小化,使用访问方法而非
+
+显然,一旦一个类公开某个属性,(作为一个负责任的包开发者),这个属性就无法再做任何修改,因为总会有人对这个属性做出依赖.
+
+所以,别问,问就所有都是private,只能通过get方法来获取()
+
+PS: 顺带一提,返回private数组是一个常见错误,因为这只令数组不可变,数组元素依然可变,所以最好用`List.of()`带来的不可变集合代替.
+
+### 04-17 最小化可变性
+
+1. 所有字段都是private
+2. 所有字段都没有set方法
+3. 所有字段都是final
+4. 类本身就是final
+5. 就算有可变属性,也要保证外部无法获取.
+
+不可变的对象在并发等场景都有很好的适用性,只是会浪费一点内存罢了.
 
 ## Chapter 12 序列化
 

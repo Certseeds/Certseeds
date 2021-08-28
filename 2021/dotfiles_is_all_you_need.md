@@ -4,7 +4,7 @@
  * @Author: nanoseeds
  * @Date: 2021-07-25 18:21:01
  * @LastEditors: nanoseeds
- * @LastEditTime: 2021-07-25 21:04:32
+ * @LastEditTime: 2021-08-13 00:30:00
  * @License: CC-BY-NC-SA_V4_0 or any later version
  -->
 
@@ -201,4 +201,4 @@ Branch:
 
 最后,本文从家用环境和商用环境的不同作为引子,指出了Linux端进行开发的必要性与优越性,列举了几种可能的Linux端使用方案,介绍了便利Linux端配置的解决方案-Dotfiles,根据Dotfiles的文件夹结构对其进行了介绍,并将相关文件分为两类,采用不同的方案进行管理,最后指出:最终的目的是使用Linux端生态,摆脱时刻要考虑风险的窘境.
 
-注: 发布于GitHub的本文采取CC-BY-NC-SA-4.0 or any later version,保留在其他平台采取不同许可证的权利-由此导致的转发链路导致许可证不同问题,请到源发布平台转发来解决.
+注: 发布于GitHub的本文采取CC-BY-NC-SA-4.0 or any later version,保留在其他平台采取不同许可证的权利-转发链路不同导致的许可证不同问题,请通过到源发布平台转发来解决.

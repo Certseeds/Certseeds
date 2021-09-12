@@ -217,7 +217,7 @@ people(bool male_,const vector<string>& schools_): male(male_),schools(schools_)
 如果不想给值,而是像调用成员的默认构造函数,直接使用空括号
 
 ``` cpp
-people(bool male_,const vector<string>& schools_): male(male_),schools() {}
+explicit people(bool male_): male(male_),schools() {}
 ```
 
 #### 跨编译单元的non-local static对象

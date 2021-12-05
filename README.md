@@ -2,7 +2,9 @@
 
 I'm Certseeds
 
-+ Bachelor of Engineering of [CSE](http://cse.sustech.edu.cn/cn/site/index/) in [SUSTech](https://www.sustech.edu.cn/) 
++ Bachelor of Engineering of [CSE](http://cse.sustech.edu.cn/cn/site/index/) in [SUSTech](https://www.sustech.edu.cn/)
+
+[My PGP Public Key (7E7F D8B5 to 04A4 4CF3)](https://github.com/Certseeds/Certseeds/blob/master/public.key)
 
 <div>
   <a href="https://github.com/anuraghazra/github-readme-stats">
@@ -27,6 +29,7 @@ I'm Certseeds
     <code><img height="45" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" alt="css"></code>
     <code><img height="45" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/cpp/cpp.png" alt="cpp"></code>
     <code><img height="45" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/java/java.png" alt="java"></code>
+    <code><img height="45" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/go/go.png" alt="go"></code>
     <code><img height="45" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/rust/rust.png" alt="rust"></code>
     <code><img height="45" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" alt="python"></code>
     <code><img height="45" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/bash/bash.png" alt="bash"></code>

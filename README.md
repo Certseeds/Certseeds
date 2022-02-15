@@ -6,6 +6,8 @@ I'm Certseeds
 
 [My PGP Public Key (7E7F D8B5 to 04A4 4CF3)](https://github.com/Certseeds/Certseeds/blob/master/public.key)
 
+[My Blog? Certseeds/words](https://github.com/Certseeds/words)
+
 <div>
   <a href="https://github.com/anuraghazra/github-readme-stats">
     <img src="https://github-readme-stats.vercel.app/api?username=Certseeds&exclude_repo=caffe&include_all_commits=true" alt="Certseeds's github stats">

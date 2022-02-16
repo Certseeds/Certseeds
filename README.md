@@ -4,7 +4,7 @@ I'm Certseeds
 
 + Graduated from [CSE](http://cse.sustech.edu.cn/), [SUSTech](https://www.sustech.edu.cn/)
 
-[My PGP Public Key (7E7F D8B5 to 04A4 4CF3)](https://github.com/Certseeds/Certseeds/blob/master/public.key)
+[My PGP Public Key (7E7F D8B5 to 04A4 4CF3)](https://raw.githubusercontent.com/Certseeds/Certseeds/master/public.key)
 
 [My Blog? Certseeds/words](https://github.com/Certseeds/words)
 

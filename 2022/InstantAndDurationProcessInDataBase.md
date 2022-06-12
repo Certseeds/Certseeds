@@ -98,4 +98,9 @@ if choice startTime and endTime, all statment can be select by `${startTime} <= 
   + [x] Instant Event
   + [x] Duration Event
 + Instant Event should store a uint64_t as startTime or endTime
-+ Duration Event should store a filed named startTime and a filed named endTime, it will save time in searching in db and make analysis more easy
++ Duration Event should store a filed named startTime and a filed named endTime, it will save time in searching in db and make analysis more easy'
+
+本质上是信息量的问题
+
++ Instant事件只需要一个时间点
++ Duration事件需要两个时间点,如果数据库里不存两个时间点,就要有额外的信息注入进来,文档内约定,db里的时间戳到底是开始还是结束,以及持续时间是多长

@@ -98,8 +98,19 @@ M=15000,R=1. map任务在150秒左右执行完毕,读取速度最高峰出现在
 
 而排序任务则是对10^10 个100bytes的records排序,map函数截取10byte排序,reduce原样输出.
 M=15000,R=4000; 读取大概花了200秒.
+
 + input只有一个高峰,因为中间文件写入而变慢.
 + shuffle任务有两个高峰,我认为是因为reduce-worker比reduce-task少,所以第一个高峰是第一批reducer从零开始读取,到所有reducer都读取完毕结束; 第二个高峰从第一批reducer-worker出现结束,新的reduce-task读取而开始.
 + 输入从shuffle的低谷期开始增长,一个尖峰直到最后结束.
 
-TODO: begin from 5.4
+备用进程很大程度上消灭了长尾效应,高效提速.
+
+#### 6-7 总结与经验.
+
+map-reduce是非常好的一层抽象,其消除了错误处理,并发,横向拓展等功能,并借助Map-Reduce的拓展性,将任务拆分成层,方便管理与维护.
+
+### 问题部分: 暂无?
+
+### video
+
+<https://www.youtube.com/watch?v=WtZ7pcRSkOA> 43:35

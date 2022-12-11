@@ -136,9 +136,23 @@ $ ls -la ./README.words.md.tar.sign.encry
 
 一般见个面, 吃个饭会涉及到的签名也就是普通和本地两个.
 
-### 信任级别
+### 签名的信任级别
 
-普通签名可以附加一个"信任级别",分以下几个级别
+这个可以被`--ask-cert-level`所触发, 添加到sign-key里面
+
++ None specified: 没什么好说的, 默认级别
++ No verifcation: 签了, 但是没验证,sig1
++ Casual Verification: 检查了下, 但是没有多途径, 不能完全100%确定.
+Also called a . You ran a few checks to make sure that the key you’re signing belongs to the person identified in it, but nothing too major.sig2
++ Extensive Verification: 完全确定, 这个公钥能对上使用者.
+
+PS: 如果你完全不知道这个公钥所有者-pid的实际对应关系, 请不要去签名
+
+一般线下只进行一次沟通的话也就签个sig1/2, 你得继续跟对方沟通, 越来越熟悉之后, 才会签sig3
+
+### 信任级别 ownertrust
+
+需要注意, ownertrust 这个信任级别是不会导出到sign-key里面的, 纯本地存储, 需要靠个人判断来分级, 默认标记成margain就可以.
 
 + unknown: 默认的, 这个公钥的使用者能和它的pid对应上, 但是你不知道它会怎么样对其他人签名.
 + never: 反向签名, 在unknown基础上,标记你知道公钥的主人会胡乱给别人签名, 啥也不确认.
@@ -146,9 +160,9 @@ $ ls -la ./README.words.md.tar.sign.encry
 + full: 在margarin基础上, 这个公钥的使用者签名的水平和你一样谨慎(?), 会确认其他人和他一样谨慎的时候才会签发full.
 + ultra: 只有自签名会用到, 声明pid这个是我自己.
 
-PS: 如果你完全不知道这个公钥所有者-pid的实际对应关系, 请不要去签名, 否则你会被别人签never的.
+PS: 如果你完全不知道这个公钥所有者-pid的实际对应关系就胡乱签名, 你会被别人标记为never的, 你都不会注意到...
 
-一般线下只进行一次沟通的话也就签个unknown, 你得继续跟对方沟通, 越来越熟悉之后, 才会签margarin甚至full.
+新的密钥默认就好, 越来越熟悉之后再提升级别.
 
 ### 签名方式
 
@@ -165,7 +179,7 @@ PS: 如果你完全不知道这个公钥所有者-pid的实际对应关系, 请�
 
 0. 将主密钥导入gpg
 1. 将被签名的公钥导入gpg
-2. gpg --sign-key ${fingerprint-of-tobesigned-pubkey}
+2. gpg --ask-cert-level -u ${your_key_fingerprint} --sign-key ${fingerprint-of-tobesigned-pubkey}
 3. gpg -a --export ${fingerprint-of-tobesigned-pubkey} 导出被签名的公钥, 跳转到1 直到所有公钥都签过名了(不然重新搞一边太麻烦了)
 4. 将签过名的公钥装回到设备上
 5. 将离线设备复原
@@ -174,3 +188,5 @@ PS: 如果你完全不知道这个公钥所有者-pid的实际对应关系, 请�
 7. 将签过名的证书, 自己私钥签名+对方公钥加密之后传给对方
 接下来是对方的操作, 如果对方不想完全可以不这么搞..., 同时注意, 不要直接把签过名的推送到公钥服务器, 或者是直接post出来, 不然没法证明密钥所有权,也很不尊重.
 8. 对方使用自己私钥解密出来, 决定是否公开
+
+参考上面的"签名的信任级别" vs ownertrust, 幸好这俩不一样, 前者基本上不改变, 一开始签好就基本不变动了.

@@ -9,7 +9,7 @@ main() {
     gpg -s \
         -e \
         -o "${input_file}".sign.encry \
-        -r "" \
+        -r "${target}" \
         "${input_file}"
     # -s: sign by your key
     # -e encry

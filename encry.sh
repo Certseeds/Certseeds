@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euox pipefail
 main() {
-    input_file=""
+    local input_file="${1}"
     gpg -s \
         -e \
         --armor \
-        -o "${input_file}".encry \
+        -o "${input_file}".sign.encry \
         -r 7E7FD8B565F042312DAB81D5DC568E1504A44CF3 \
         "${input_file}"
     # -s: sign by your key
@@ -16,4 +16,7 @@ main() {
     # final line is input file
     # now use the encry file for send
 }
-main
+if [[ "${#}" != "1" ]]; then
+    exit 1
+fi
+main "${1}"

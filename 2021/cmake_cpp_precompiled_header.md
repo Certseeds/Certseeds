@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2021-09-25"
+title: "cmake cpp precompiled header"
+description: "cmake cpp precompiled header"
+tags: ["cpp", "compiler"]
+---
+
 # CMake PreCompiled Header: 基于CMake的预编译头文件
 
 ## 传统的编译方式中存在着什么问题

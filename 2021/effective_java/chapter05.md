@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2021-11-21"
+title: "effective java reading notes chapter05"
+description: "effective java reading notes 05"
+tags: ["java","effective" ]
+---
+
 ## Chapter 05 泛型
 
 ### 05-26　不用泛型类的原生态类型

@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2021-10-30"
+title: "hook prototype for iframe"
+description:  "hook prototype for iframe"
+tags: ["frontend", "security"]
+---
+
 # 通过prototype来禁止动态iframe进行攻击
 
 ## 简要介绍

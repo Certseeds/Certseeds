@@ -1,3 +1,10 @@
+---
+author: "Certseeds"
+date: "2022-06-05"
+title: "effective java reading notes chapter06"
+description: "effective java reading notes 06"
+tags: ["java","effective" ]
+---
 ## Chapter 06 枚举,注解
 
 ### 06-34 enum取代常量

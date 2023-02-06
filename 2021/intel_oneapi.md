@@ -1,12 +1,11 @@
-<!--
- * @Github: https://github.com/Certseeds/words
- * @Organization: SUSTech
- * @Author: nanoseeds
- * @Date: 2021-09-05 23:58:45
- * @LastEditors: nanoseeds
- * @LastEditTime: 2021-09-06 01:10:05
- * @License: CC-BY-NC-SA_V4_0 or any later version
- -->
+---
+author: "Certseeds"
+license: "CC-BY-NC-SA-4.0 or any later version"
+date: "2021-09-05"
+title: "intel oneapi"
+description: "intel oneapi"
+tags: ["cpp", "intel"]
+---
 
 # intel-oneapi
 

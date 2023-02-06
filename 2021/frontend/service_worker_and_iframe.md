@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2021-10-23"
+title: "service worker and iframe"
+description: "service worker and iframe"
+tags: ["frontend", "security", "privacy"]
+---
+
 # service_worker and iframe in Modern Broswer
 
 承接上文 [./how_to_confront_with_track.md](./how_to_confront_with_track.md), 我们已经知道了 User-Agent是一个信息熵极高的HTTP-Header字段, 并介绍了几种对抗方式.

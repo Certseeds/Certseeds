@@ -1,12 +1,11 @@
-<!--
- * @Github: https://github.com/Certseeds/words
- * @Organization: SUSTech
- * @Author: nanoseeds
- * @Date: 2021-08-11 00:27:18
- * @LastEditors: nanoseeds
- * @LastEditTime: 2021-08-13 00:30:13
- * @License: CC-BY-NC-SA_V4_0 or any later version
- -->
+---
+author: "Certseeds"
+license: "CC-BY-NC-SA-4.0 or any later version"
+date: "2021-08-11"
+title: "Redis中的K-V实现与Java中的哈希表对比"
+description: "redis kv and hashmap"
+tags: ["redis", "c", "java"]
+---
 
 # Redis中的K-V实现与Java中的哈希表对比
 

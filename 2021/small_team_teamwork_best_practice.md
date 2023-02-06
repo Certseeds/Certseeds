@@ -1,12 +1,11 @@
-<!--
- * @Github: https://github.com/Certseeds/words
- * @Organization: SUSTech
- * @Author: nanoseeds
- * @Date: 2021-08-29 21:30:33
- * @LastEditors: nanoseeds
- * @LastEditTime: 2021-09-05 23:49:12
- * @License: CC-BY-NC-SA_V4_0 or any later version 
- -->
+---
+author: "Certseeds"
+license: "CC-BY-NC-SA-4.0 or any later version"
+date: "2021-08-29"
+title: "小型团队合作最佳实践"
+description: "small team teamwork best practice"
+tags: ["experience"]
+---
 
 # 小型团队 合作最佳实践
 

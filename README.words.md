@@ -1,3 +1,12 @@
+---
+author: "Certseeds"
+title: "README.words"
+date: "2022-05-12"
+description: "README.words.md"
+tags: ["README", "words"]
+weight: 1
+---
+
 # words collection
 
 格式问题/版权问题/转载问题/etc.,非内容相关问题,请提[issue](https://github.com/Certseeds/words/issues)

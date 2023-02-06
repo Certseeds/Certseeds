@@ -1,11 +1,10 @@
-<!--
- * @Github: https://github.com/Certseeds/words
- * @Author: nanoseeds
- * @Date: 2021-10-09 21:15:20
- * @LastEditors: nanoseeds
- * @LastEditTime: 2021-10-09 22:34:37
- * @License: CC-BY-NC-SA_V4_0 or any later version 
- -->
+---
+author: "Certseeds"
+date: "2021-10-09"
+title: "crtp class extend itself"
+description: "crtp class extend itself"
+tags: ["cpp", "cpp-template"]
+---
 
 # 奇异递归模板模式 CRTP
 

@@ -1,12 +1,11 @@
-<!--
- * @Github: https://github.com/Certseeds/words
- * @Organization: SUSTech
- * @Author: nanoseeds
- * @Date: 2021-08-28 20:19:01
- * @LastEditors: nanoseeds
- * @LastEditTime: 2021-08-29 21:29:15
- * @License: CC-BY-NC-SA_V4_0 or any later version
- -->
+---
+author: "Certseeds"
+license: "CC-BY-NC-SA-4.0 or any later version"
+date: "2021-08-28"
+title: "how to confront with trace"
+description: "how to confront with trace"
+tags: ["cpp", "project-template"]
+---
 
 # 如何管理Modern Cpp项目
 

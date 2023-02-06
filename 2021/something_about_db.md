@@ -1,3 +1,12 @@
+---
+author: "Certseeds"
+license: "CC-BY-NC-SA-4.0 or any later version"
+date: "2021-09-12"
+title: "漫谈Database-项目中实际遇到的Mysql问题及其解决"
+description: "something about db"
+tags: ["experience", "database"]
+---
+
 # 漫谈Database-项目中实际遇到的Mysql问题及其解决
 
 最近涉及到后端相关的工作,涉及到不少数据库相关的事情. 整理一下避免忘记.

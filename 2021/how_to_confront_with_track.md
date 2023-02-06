@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2021-09-25"
+title: "how to confront with trace"
+description: "how to confront with trace"
+tags: ["frontend", "security"]
+---
+
 # how to confront with trace
 
 ## 如何对抗识别

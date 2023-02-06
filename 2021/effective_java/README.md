@@ -1,12 +1,10 @@
-<!--
- * @Github: https://github.com/Certseeds/words
- * @Organization: SUSTech
- * @Author: nanoseeds
- * @Date: 2021-08-11 23:10:21
- * @LastEditors: nanoseeds
- * @LastEditTime: 2021-08-22 16:17:23
-   * @License: CC-BY-NC-SA_V4_0 or any later version 
-   -->
+---
+author: "Certseeds"
+date: "2021-08-11"
+title: "effective java reading notes"
+description: "effective java reading notes"
+tags: ["java","effective" ]
+---
 
 # Effective Java阅读笔记
 

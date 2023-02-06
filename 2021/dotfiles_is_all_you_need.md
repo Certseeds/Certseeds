@@ -1,12 +1,10 @@
-<!--
- * @Github: https://github.com/Certseeds/words
- * @Organization: SUSTech
- * @Author: nanoseeds
- * @Date: 2021-07-25 18:21:01
- * @LastEditors: nanoseeds
- * @LastEditTime: 2021-08-13 00:30:00
- * @License: CC-BY-NC-SA_V4_0 or any later version
- -->
+---
+author: "Certseeds"
+date: "2021-07-25"
+title: "dotfiles is all you need"
+description: "dotfiles is all you need"
+tags: ["linux", "dotfiles"]
+---
 
 <!-- 软件开源 ->
  家庭环境非常自由 ->

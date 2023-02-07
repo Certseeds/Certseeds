@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2022-05-16"
+title: "jodatime与javatime_讨论java中的时间"
+description: "from jodatime&javatime talking about time in java"
+tags: ["java", "experience"]
+---
+
 # jodatime与javatime_讨论java中的时间
 
 joda-time成名已久,很多项目中都能见到对于他的依赖,本文立足于使用Java8中的java.time对joda-time的替换,来讨论时间这一概念以及其在系统中的组成.

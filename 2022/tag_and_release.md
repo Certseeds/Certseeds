@@ -1,3 +1,12 @@
+---
+author: "Certseeds"
+date: "2022-11-14"
+title: "tag and release"
+description: "rtag and release"
+tags: ["exoperience", "git"]
+---
+
+
 # tag和release
 
 近期对一个使用git进行版本管理的项目进行了一些改造,这里简单记录一下过程和细节.

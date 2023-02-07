@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2022-05-29"
+title: Immutable与其使用"
+description: "immutable and usage"
+tags: ["java", "immutable"]
+---
+
 # Immutable及其使用
 
 近期在code-review时对于java中的`final for variable`有一些讨论,因此写一个短文总结下immutable思想,以及immutable在现代编程语言中的使用

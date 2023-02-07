@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2022-05-14"
+title: "记一次删除bin目录"
+description: "action log for rm -rf /bin"
+tags: ["experience", "dangerous"]
+---
+
 # 记一次删除`/bin`
 
 ## 删除`/bin`

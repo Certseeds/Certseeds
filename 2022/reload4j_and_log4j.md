@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2022-07-30"
+title: "reload4j and log4j"
+description: "reload4j and log4j"
+tags: ["java", "log"]
+---
+
 # reload4j_and_log4j
 
 近期频繁被ide提示log4j有安全风险,但是`log4j:log4j`这个包没有后续更新了,因此也就断了更新的想法,近期发现居然有维护者在维护log4j,虽然包名改了,但是包体不变. 提起兴趣来想要记录一下log4j这个项目的兴衰.

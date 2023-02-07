@@ -1,3 +1,12 @@
+---
+author: "Certseeds"
+date: "2022-11-27"
+title: "openpgp通信"
+description: "connection by openpgp"
+tags: ["openpgp", "security"]
+---
+
+
 # 基于openpgp的通信
 
 ## openpgp的双向通信

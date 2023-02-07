@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2022-09-04"
+title: "mit6824infos"
+description: "mit6824infos"
+tags: ["go", "mit6824"]
+---
+
 # Basic info for mit6.824-2022spring
 
 ## 结构

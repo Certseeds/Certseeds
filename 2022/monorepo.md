@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2022-04-10"
+title: "monorepo"
+description: "monorepo"
+tags: ["monorepo", "cpp"]
+---
+
 # monorepo
 
 ## 什么是monorepo?

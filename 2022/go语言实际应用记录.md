@@ -1,3 +1,11 @@
+---
+author: "Certseeds"
+date: "2022-07-10"
+title: "go语言实际应用记录"
+description: "using go logs"
+tags: ["go", "experience"]
+---
+
 # go语言实际应用的记录
 
 ## 写个后台进程

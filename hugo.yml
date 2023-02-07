@@ -36,6 +36,7 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowWordCount: true
+  ShowFullTextinRSS: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
   disableSpecial1stPost: false
@@ -47,7 +48,7 @@ params:
   tocopen: true
 
   assets:
-    # disableHLJS: true # to disable highlight.js
+    disableHLJS: false # to disable highlight.js
     disableFingerprinting: true
     favicon: "https://avatars.githubusercontent.com/u/51754303?s=40"
     favicon16x16: "https://avatars.githubusercontent.com/u/51754303?s=16"
@@ -112,13 +113,17 @@ menu:
     - name: posts
       url: /posts/
       weight: 10
+    - identifier: rss
+      name: rss
+      url: /index.xml
+      weight: 10
     - name: Search
       url: /search/
       weight: 10
     - identifier: tags
       name: tags
       url: /tags/
-      weight: 20
+      weight: 10
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 
@@ -128,15 +133,14 @@ outputs:
         - RSS
         - JSON # is necessary
 
-pygmentsUseClasses: true
 markup:
   goldmark:
     renderer:
       unsafe: true # HUGO 默认转义 Markdown 文件中的 HTML 代码，如需开启的话
   highlight:
-    noClasses: false
+    style: monokai
+    lineNos: false
+    noClasses: true
     codeFences: true
-    # anchorLineNos: true
-    # guessSyntax: true
-    # lineNos: true
-    # style: monokai
+    guessSyntax: true
+    anchorLineNos: false

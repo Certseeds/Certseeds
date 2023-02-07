@@ -421,7 +421,7 @@ PS: 顺带一提,返回private数组是一个常见错误,因为这只令数组�
 
 ## chapter 05 泛型
 
-[泛型](./chapter05.md)
+[泛型](http://certseeds.github.io/Certseeds/posts/2021/effective_java/chapter05)
 
 
 ## Chapter 12 序列化

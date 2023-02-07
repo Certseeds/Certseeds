@@ -52,3 +52,5 @@ binary/*
 binary
 content/*
 content
+.hugo_build.lock
+public

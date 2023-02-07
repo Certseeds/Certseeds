@@ -59,7 +59,7 @@ BOB是个****
 1. 为了更高效率的传播, 需要确保信息是文本格式的, 不要变成二进制格式
 2. 为了避免信息被更改, 需要将信息和签名绑定到一起, 避免两者分离.
 
-脚本可以参考[./openpgp/publish.sh](./openpgp/publish.sh), 会将输入文件加一个`.sign`后缀添加到本地, 可以用这个发送(建议加一个到自己公钥的链接来提高下可信度)
+脚本可以参考[./openpgp/publish.sh](https://raw.githubusercontent.com/Certseeds/Certseeds/master/2022/openpgp/publish.sh), 会将输入文件加一个`.sign`后缀添加到本地, 可以用这个发送(建议加一个到自己公钥的链接来提高下可信度)
 
 经过测试, 只需要公钥即可`gpg --verify-files`确认签名是被其对应的私钥签署的. 由于这里是明文的,也没什么提取不提取的问题了.
 
@@ -83,15 +83,15 @@ BOB是个****
 
 当然这样也有坏处, 由于是拿对方公钥加密的, 你自己也没法直接看里面的内容, 也没什么办法来校验签名来看看是不是自己签的(如果你忘了的话).
 
-具体脚本可以参考[./openpgp/private.sh](./openpgp/private.sh)
+具体脚本可以参考[./openpgp/private.sh](https://raw.githubusercontent.com/Certseeds/Certseeds/master/2022/openpgp/private.sh)
 
 ## Alice向自己发送信息
 
-这种情况是特化版本的Alice-To-Bob, 只不过Bob是Alice, 因此也可以使用[./openpgp/private.sh](./openpgp/private.sh). Alice既有私钥也有公钥, 只不过想在一些地方埋一些宝藏,或者在仓库里放一些只有自己能打开的莫名其妙的二进制文件来隐藏一些关键信息.
+这种情况是特化版本的Alice-To-Bob, 只不过Bob是Alice, 因此也可以使用[./openpgp/private.sh](https://raw.githubusercontent.com/Certseeds/Certseeds/master/2022/openpgp/private.sh). Alice既有私钥也有公钥, 只不过想在一些地方埋一些宝藏,或者在仓库里放一些只有自己能打开的莫名其妙的二进制文件来隐藏一些关键信息.
 
 PS: 有些疯狂的家伙会把自己的私钥用私钥签名,公钥加密之后公开放到个人网页.
 
-这个情况也是一个特化版本的Bob-To-Alice,只不过Bob是Alice, 因此适用[encry.sh](./../encry.sh)这个脚本, 只不过encry.sh为了方便在issue,discussion里面发布, 输出不是二进制的文件,而是文本.
+这个情况也是一个特化版本的Bob-To-Alice,只不过Bob是Alice, 因此适用[encry.sh](https://raw.githubusercontent.com/Certseeds/Certseeds/master/encry.sh)这个脚本, 只不过encry.sh为了方便在issue,discussion里面发布, 输出不是二进制的文件,而是文本.
 
 可以观察到上面两个脚本里面都没有指定签名使用哪一个密钥, 这个是因为签名需要私钥, 一般本地只有自己的私钥(不觉得随便拿对方私钥是好事), 没有指定的必要. 如果你有多个子密钥在gpg里面,建议考虑下使用精简过后的容器来进行签名,加密等工作,一个容器里面只放一对.
 
@@ -195,7 +195,7 @@ PS: 如果你完全不知道这个公钥所有者-pid的实际对应关系就胡
 4. 将签过名的公钥装回到设备上
 5. 将离线设备复原
 上面是离线设备的操作,下面是在有签名子密钥的设备上进行的操作.
-6. 使用[private.sh](./openpgp/private.sh)来对每一个公钥进行自己的私钥签名+对方的公钥加密
+6. 使用[private.sh](https://raw.githubusercontent.com/Certseeds/Certseeds/master/2022/openpgp/private.sh)来对每一个公钥进行自己的私钥签名+对方的公钥加密
 7. 将签过名的证书, 自己私钥签名+对方公钥加密之后传给对方
 接下来是对方的操作, 如果对方不想完全可以不这么搞..., 同时注意, 不要直接把签过名的推送到公钥服务器, 或者是直接post出来, 不然没法证明密钥所有权,也很不尊重.
 8. 对方使用自己私钥解密出来, 决定是否公开

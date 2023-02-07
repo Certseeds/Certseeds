@@ -8,7 +8,7 @@ tags: ["cpp", "compiler"]
 
 # cmake中的pch预编译头加速-实际应用中的配置细节
 
-承接上文[cmake_cpp_precompiled_header](./cmake_cpp_precompiled_header.md),项目中在实际应用一段时间的预编译头后,证明预编译头在编译中稳定性可以得到保证,加速效果较为明显,于是决定将其推广到整个项目中,并作为默认打开的选项应用. 在这个过程中,决定记录相应的应用细节
+承接上文[cmake_cpp_precompiled_header](http://certseeds.github.io/Certseeds/posts/2021/cmake_cpp_precompiled_header),项目中在实际应用一段时间的预编译头后,证明预编译头在编译中稳定性可以得到保证,加速效果较为明显,于是决定将其推广到整个项目中,并作为默认打开的选项应用. 在这个过程中,决定记录相应的应用细节
 
 ## 前情提要
 

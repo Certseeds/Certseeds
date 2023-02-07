@@ -4,6 +4,7 @@ title: "CC BY-NC-SA 4.0"
 date: "1996-12-20"
 tags: ["LICENSE"]
 weight: 1
+hideFooter: true
 ---
 Attribution-NonCommercial-ShareAlike 4.0 International
 

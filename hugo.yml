@@ -2,6 +2,7 @@ baseURL: http://certseeds.github.io/Certseeds
 languageCode: en-us
 title: Certseeds Blog
 theme: "PaperMod"
+Copyright: "Certseeds publish this document based on CC BY-NC-SA 4.0(or any later version)"
 
 enableEmoji: true # 允许使用 Emoji 表情，建议 true
 hasCJKLanguage: true # 自动检测是否包含 中文日文韩文 如果文章中使用了很多中文引号的话可以开启
@@ -103,7 +104,6 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
-
 menu:
   main:
     - identifier: archives

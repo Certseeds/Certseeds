@@ -3,7 +3,7 @@ author: "creativecommons.org"
 title: "CC BY-NC-SA 4.0"
 date: "1996-12-20"
 tags: ["LICENSE"]
-weight: 2
+weight: 1
 ---
 Attribution-NonCommercial-ShareAlike 4.0 International
 

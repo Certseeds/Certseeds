@@ -50,3 +50,5 @@
 *.ignore.md
 binary/*
 binary
+content/*
+content

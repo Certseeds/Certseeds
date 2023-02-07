@@ -4,7 +4,7 @@ title: "README.words"
 date: "2022-05-12"
 description: "README.words.md"
 tags: ["README", "words"]
-weight: 1
+weight: 3
 ---
 
 # words collection

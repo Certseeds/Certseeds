@@ -15,7 +15,7 @@ I'm Certseeds
 
 [My PGP Public Key (7E7F D8B5 to 04A4 4CF3)](https://raw.githubusercontent.com/Certseeds/Certseeds/master/public.key)
 
-[My Blog?](https://github.com/Certseeds/Certseeds)
+[My Blog](https://Certseeds.github.io/Certseeds)
 
 <div>
   <a href="https://github.com/anuraghazra/github-readme-stats">

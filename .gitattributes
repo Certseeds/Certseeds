@@ -22,8 +22,6 @@
 *.sh text eol=lf
 *.bat text eol=crlf
 
-# Audio
-*.wav -text
 
 # These files are text and should be normalized (Convert crlf => lf)
 *.css           text diff=css

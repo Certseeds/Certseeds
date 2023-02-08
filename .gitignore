@@ -1,14 +1,5 @@
-###
-## @Github: https://github.com/Certseeds/words
-## @Organization: SUSTech
-## @Author: nanoseeds
-## @Date: 2021-05-28 21:09:09
-## @LastEditors: nanoseeds
-## @LastEditTime: 2021-10-30 20:58:39
-###
-
-# Created by https://www.toptal.com/developers/gitignore/api/audio,video,docz
-# Edit at https://www.toptal.com/developers/gitignore?templates=audio,video,docz
+# Created by https://www.toptal.com/developers/gitignore/api/audio,video,docz,hugo
+# Edit at https://www.toptal.com/developers/gitignore?templates=audio,video,docz,hugo
 
 ### Audio ###
 *.aif
@@ -28,6 +19,21 @@
 .docz
 
 
+### Hugo ###
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
+
 ### Video ###
 *.3g2
 *.3gp
@@ -46,11 +52,6 @@
 *.wmv
 *.webm
 
-# End of https://www.toptal.com/developers/gitignore/api/audio,video,docz
+# End of https://www.toptal.com/developers/gitignore/api/audio,video,docz,hugo
 *.ignore.md
-binary/*
-binary
-content/*
 content
-.hugo_build.lock
-public

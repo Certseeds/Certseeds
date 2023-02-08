@@ -27,7 +27,7 @@ params:
   keywords: [Blog, Portfolio, PaperMod]
   author: Certseeds
   images: ["https://avatars.githubusercontent.com/u/51754303"]
-  DateFormat: "January 2, 2006"
+  DateFormat: "2006 January 2"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 

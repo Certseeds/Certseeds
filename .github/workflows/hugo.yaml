@@ -2,7 +2,7 @@ name: github pages
 
 on:
   push:
-    branches: [ "master","hugo" ] # TODO
+    branches: [ "master" ] # TODO
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
 
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          fetch-depth: 1
 
       - uses: actions/cache@v3
         with:

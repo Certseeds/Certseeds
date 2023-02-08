@@ -10,7 +10,7 @@ tags: ["frontend", "security"]
 
 ## 简要介绍
 
-承接上文[service_worker and iframe](http://certseeds.github.io/Certseeds/posts/2021/service_worker_and_iframe), 新的网站内有三种,两大类措施很难防御,今天来介绍如何对抗其中的iframe
+承接上文[service_worker and iframe](http://certseeds.github.io/Certseeds/posts/2021/frontend/service_worker_and_iframe), 新的网站内有三种,两大类措施很难防御,今天来介绍如何对抗其中的iframe
 
 经过简单分析后,可得关键函数
 

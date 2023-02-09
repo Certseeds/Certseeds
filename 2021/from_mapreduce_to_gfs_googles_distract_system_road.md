@@ -1,7 +1,7 @@
 ---
 author: "Certseeds"
 date: "2021-12-12"
-title: "from mapreduce to gfs googles distract system road"
+title: "从Map-Reduce到Google-File-System,谷歌的分布式之路"
 description: "from mapreduce to gfs googles distract system road"
 tags: ["reading_notes", "google"]
 ---

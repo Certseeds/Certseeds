@@ -1,7 +1,7 @@
 ---
 author: "Certseeds"
 date: "2021-08-11"
-title: "effective java reading notes"
+title: "effective java 读书笔记"
 description: "effective java reading notes"
 tags: ["java","effective" ]
 ---

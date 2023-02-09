@@ -1,7 +1,7 @@
 ---
 author: "Certseeds"
 date: "2021-09-12"
-title: "effective cpp reading notes"
+title: "effective cpp 读书笔记"
 description: "effective cppp reading notes"
 tags: ["cpp", "effective" ]
 ---

@@ -1,7 +1,7 @@
 ---
 author: "Certseeds"
 date: "2022-06-05"
-title: "effective java reading notes chapter06"
+title: "effective java 读书笔记 chapter06"
 description: "effective java reading notes 06"
 tags: ["java","effective" ]
 ---

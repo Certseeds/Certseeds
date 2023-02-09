@@ -1,9 +1,9 @@
 ---
 author: "Certseeds"
-date: "2021-10-23"
-title: "how to confront with track"
-description: "how to confront with track"
-tags: ["frontend", "security", "privacy"]
+date: "2021-09-25"
+title: "how to confront with trace"
+description: "how to confront with trace"
+tags: ["frontend", "security"]
 ---
 
 # how to confront with trace

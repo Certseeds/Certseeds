@@ -124,6 +124,10 @@ menu:
       name: tags
       url: /tags/
       weight: 10
+    - identifier: encryptMsg
+      name: encryptMsg
+      url: https://certseeds.github.io/openpgpage
+      weight: 10
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 

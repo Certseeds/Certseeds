@@ -61,6 +61,10 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: add public.key
+        run: |
+          cp ./public.key ./public/public.key
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

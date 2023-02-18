@@ -10,10 +10,10 @@
 * text=auto
 
 # itself
-*.gitattributes text
-*.gitignore     text
-*.md            text
-*.LICENSE       text
+*.gitattributes text eol=lf
+*.gitignore     text eol=lf
+*.md            text eol=lf
+*.LICENSE       text eol=lf
 *.template text diff=text
 *.in text eol=lf
 *.out text eol=lf

@@ -72,7 +72,7 @@ we suppore There exists three tables, `monthly`,`daily` and `hourly`
 
 if date is `2022-03-03 03:33:33`, you'd like to get data from database.
 
-1. get `2022-01-01 to 2022-03-01`, 
+1. get `2022-01-01 to 2022-03-01`,
 `2022-01-01 00:00:00` is `1640966400000`
 
 the start of this month is `ZonedDataTime.now(Constants.DefaultZone).withStartOfMonth().withHours(0).withMinute(0).withSecond(0).withNano(0)`, transftr it to mills is 1646064000000

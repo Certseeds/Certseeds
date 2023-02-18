@@ -38,6 +38,7 @@ jobs:
           mkdir -p ./content/posts
           mv ./2021 ./content/posts/
           mv ./2022 ./content/posts/
+          mv ./2023 ./content/posts/
           mv ./LICENSE.md ./content/posts/
           mv ./README.md ./content/posts/
           mv ./README.words.md ./content/posts/

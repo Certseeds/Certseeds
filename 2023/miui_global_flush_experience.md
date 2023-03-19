@@ -64,7 +64,7 @@ because of flushing without any account, SIM card and wifi, config do not need l
 
 ## transfer configrations and app...
 
-1. the un-mainland system can use google's moving device, but it will not bring a google expreience: old and new device connect by a common wifi, make it slow and unstable.
+1. the un-mainland system can use google's moving device, but it will not bring a google experience: old and new device connect by a common wifi, make it slow and unstable.
 2. `miui.huanji` is a good choice, it at least can transfer system configrations, media and 3rd-party app(without configration file). if the old machine is older version(12-) mainland-miui, some app can transfer config. this app connect old and new device by wifi from new device, which more effective.
 
 ## reference

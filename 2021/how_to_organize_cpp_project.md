@@ -4,7 +4,7 @@ license: "CC-BY-NC-SA-4.0 or any later version"
 date: "2021-08-28"
 title: "如何管理Modern Cpp项目"
 description: "how to management modern cpp project"
-tags: ["cpp", "project-template"]
+tags: ["cpp", "project", "template"]
 ---
 
 # 如何管理Modern Cpp项目

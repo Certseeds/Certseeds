@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2021-10-09"
 title: "奇异递归模板模式 CRTP"
 description: "crtp class extend itself"
-tags: ["cpp", "cpp-template"]
+tags: ["cpp", "template"]
 ---
 
 # 奇异递归模板模式 CRTP

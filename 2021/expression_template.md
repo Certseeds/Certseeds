@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2021-10-24"
 title: "表达式模板-Expression Template"
 description:  "expression template"
-tags: ["cpp", "cpp-template"]
+tags: ["cpp", "template"]
 ---
 
 # 表达式模板-Expression Template
@@ -14,7 +14,7 @@ tags: ["cpp", "cpp-template"]
 
 推广一下, N个矩阵相加, 会产生N-1个中间矩阵, 很显然,在内存分配上是极大的挑战, 纵使临时矩阵运算完后可以销毁, 内存一次申请一次析构,也浪费时间.
 
-有没有方式能规约掉这N-1个矩阵? 让这些矩阵只有一份的内存消耗? 
+有没有方式能规约掉这N-1个矩阵? 让这些矩阵只有一份的内存消耗?
 
 ## 普通方法
 

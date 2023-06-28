@@ -9,12 +9,12 @@ main() {
     gpg -s \
         -e \
         -o "${input_file}".sign.encry \
-        -r "${target}" \
+        -R "${target}" \
         "${input_file}"
     # -s: sign by your key
     # -e encry
     # -o output file
-    # -r
+    # -R
       # can be fingerprint of key
       # can be full of UID
       # can be the name part of a UID

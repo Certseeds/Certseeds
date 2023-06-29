@@ -4,7 +4,7 @@ main() {
     local input_file="${1}"
     local keyFile=$(mktemp "${input_file}".key.XXXX)
     trap "rm -f '${keyFile}'" EXIT
-    local key=$(dd if=/dev/urandom count=1 bs=64 | base64 | head -c 32)
+    local key=$(openssl rand 128)
     echo "${key}" | tee "${keyFile}"
     cat "${keyFile}"
     gpg -s \

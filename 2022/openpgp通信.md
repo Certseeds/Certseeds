@@ -103,7 +103,7 @@ PS: 有些疯狂的家伙会把自己的私钥用私钥签名,公钥加密之后
 
 PS: 为了增加随机性,建议每次随机对长度进行一定幅度的增加或者减少.
 
-```
+``` bash
 $ ls -la ./README.words.md
 343 ./README.words.md
 $ echo $((65536-343))
@@ -111,7 +111,13 @@ $ echo $((65536-343))
 $ head -c 65193 /dev/urandom > ./README.words.md.postfix
 $ ls -la ./README.words.md.postfix
 65193 ./README.words.md.postfix
-$ tar -cvf ./README.words.md.tar ./README.words.md ./README.words.md.postfix
+$ tar -czvf \
+    ./README.words.md.tgz \
+    --owner=youknow:1000 \
+    --group=therules:1000 \
+    --mode=0644 \
+    --mtime='UTC+0 1926-08-17 $(shuf -i 0-8):$(shuf -i 0-59):$(shuf -i 0-59)' \
+    ./README.words.md ./README.words.md.postfix
 $ ./encry.sh ./README.words.md.tar
 ./README.words.md.tar.sign.encry
 $ ls -la ./README.words.md.tar.sign.encry
@@ -120,7 +126,11 @@ $ ls -la ./README.words.md.tar.sign.encry
 
 之后拿到产物
 
-需要注意的是, 由于tar会保存用户信息, 因此如果不想往里面附加的话, 建议tar这一步在容器内操作, 那样得到的全都是root.
+需要注意的是, tar
+
++ 会保存用户信息, 如果不想往里面附加的话, 需要加指令抑制读取默认的owner:group/
++ 会采集文件mode,不想打包进去需要指定为0644.
++ 会采集文件的时间, 不想被采集进去需要加指令, 指定为特定的一个时间.
 
 ## 签名其他人的公钥-建立信任链
 

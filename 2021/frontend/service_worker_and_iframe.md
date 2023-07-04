@@ -8,7 +8,7 @@ tags: ["frontend", "security", "privacy"]
 
 # service_worker and iframe in Modern Broswer
 
-承接上文 [./how_to_confront_with_track.md](http://certseeds.github.io/Certseeds/posts/2021/how_to_confront_with_track), 我们已经知道了 User-Agent是一个信息熵极高的HTTP-Header字段, 并介绍了几种对抗方式.
+承接上文 [./how_to_confront_with_track.md](http://blog.certseeds.com/posts/2021/how_to_confront_with_track), 我们已经知道了 User-Agent是一个信息熵极高的HTTP-Header字段, 并介绍了几种对抗方式.
 
 最近发现了一个网站,能够探查User-Agent, 在这个网站上看到了一些全新的东西. [webBroswerTools](https://webbrowsertools.com/useragent/)
 

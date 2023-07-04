@@ -55,7 +55,7 @@ for(size_t x{0}; x < row;x++){
 
 如果只是`matrix1 + matrix2`,那么重载运算符还能对付得过来,但是一旦多起来, 不同类型时间该如何重载运算符?
 
-答案是使用[奇异递归模板模式,CRTP](http://certseeds.github.io/Certseeds/posts/2021/crtp_class_extend_itself), 通过基类`Expression`来统一 "矩阵"与"多个矩阵的操作树"
+答案是使用[奇异递归模板模式,CRTP](http://blog.certseeds.com/posts/2021/crtp_class_extend_itself), 通过基类`Expression`来统一 "矩阵"与"多个矩阵的操作树"
 
 ``` cpp
 template<typename T>

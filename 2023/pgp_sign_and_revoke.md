@@ -8,7 +8,7 @@ tags: ["openpgp", "security"]
 
 # OpenPGP 签名与吊销
 
-上一篇文章 <https://certseeds.github.io/Certseeds/posts/2022/openpgp通信/>
+上一篇文章 <https://blog.certseeds.com/posts/2022/openpgp通信/>
 
 近期操作了一些签名与吊销操作, 记录一下防止忘记.
 

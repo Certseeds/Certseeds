@@ -66,6 +66,10 @@ jobs:
         run: |
           cp ./public.key ./public/public.key
 
+      - name: robots.txt
+        run: |
+          cp ./robots.txt ./public/robots.txt
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

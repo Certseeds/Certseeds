@@ -1,4 +1,4 @@
-baseURL = "http://blog.certseeds.com"
+baseURL = "https://blog.certseeds.com"
 languageCode = "en-us"
 title = "Certseeds Blog"
 theme = "PaperMod"
@@ -29,7 +29,7 @@ DateFormat = "2006 January 2"
 defaultTheme = "auto"
 disableThemeToggle = false
 ShowReadingTime = true
-ShowShareButtons = true
+ShowShareButtons = false
 ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
@@ -42,8 +42,8 @@ disableScrollToTop = false
 comments = false
 hidemeta = false
 hideSummary = false
-showtoc = true
-tocopen = true
+ShowToc = true
+TocOpen = true
 
 [params.assets]
 disableHLJS = false

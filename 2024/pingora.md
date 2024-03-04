@@ -1,9 +1,9 @@
 ---
 author: "Certseeds"
-date: "20243-03-03"
+date: "2024-03-03"
 title: "pingora, a rust library for replace nginx"
 description: "pingora, 取代nginx的rust库"
-tags: ["experience", "github"]
+tags: ["cache", "paper", "github"]
 ---
 
 本文聚焦于pingora, 试图从相关的文章与仓库中挖掘出尽量多的信息.
@@ -12,9 +12,11 @@ tags: ["experience", "github"]
 
 + 博客文章: <https://blog.cloudflare.com/zh-cn/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet-zh-cn/>
 + github链接: <https://github.com/cloudflare/pingora/>
-+ 论文地址: <https://dl.acm.org/doi/10.1145/3600006.3613147>
 
 ## S3-FIFO
+
++ 论文地址: <https://dl.acm.org/doi/10.1145/3600006.3613147>
++ pdf链接: <https://dl.acm.org/doi/pdf/10.1145/3600006.3613147>
 
 这个部分来自于: <https://github.com/cloudflare/pingora/tree/main/tinyufo>
 

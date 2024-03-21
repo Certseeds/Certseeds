@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-03-20"
 title: "Build credible information channels"
 description: "构建可信的信息渠道"
-tags: ["blog", "frontend"]
+tags: ["blog", "frontend", "information"]
 ---
 
 # 构建可信的信息渠道
@@ -53,6 +53,8 @@ nostr是一个相对于mastodon使用的activitypub更分布式的协议, 它使
 + 服务端API文档: <https://github.com/nostr-protocol/nips>
 
 阅读之后可以发现, 客户端和服务端之间通过websocket来联系, github-pages还是不支持这个, 这条路走不通...
+
+TODO: 有没有可能在提交过程中, 使用gog对博文进行签名, 之后通过工具将其上传到nostr中继器?
 
 ## RSS
 

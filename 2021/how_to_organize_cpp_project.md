@@ -57,7 +57,7 @@ ffmpeg是一个比较稳定,同时应用广泛的库,基本上各个linux发行�
 
 #### 直接将依赖的项目作为子模块放到版本管理中
 
-实践这一条最充分的莫过于[boost](https://github.com/boostorg/boost),其[.gitsubmodules](https://github.com/boostorg/boost/blob/master/.gitmodules)内足足有159个(截至20210828)个submodule,每个submodule都链接到子模块的某一个提交.
+实践这一条最充分的莫过于[boost](https://github.com/boostorg/boost),其[.gitsubmodules](https://github.com/boostorg/boost/blob/master/.gitmodules)内足足有159个(截至20210828)submodule,每个submodule都链接到子模块的某一个提交.
 
 这样的好处在于
 
@@ -104,11 +104,11 @@ ffmpeg是一个比较稳定,同时应用广泛的库,基本上各个linux发行�
 
 + 然后直接编译(或者显式链接子模块中的target)
 
-##### 特殊分类-HeaderOnly库
+#### 特殊分类-HeaderOnly库
 
 很显然, 依赖并不单纯指的是依赖静态库,动态库,由于模板的特性(模板需要实例化)与STL库中模板的大规模应用,HeaderOnly逐渐成为一些库分发的方式.
 
-最典型的当属C++的标准模板库STL,其他例子还有[Catch2:一个C++测试库](https://github.com/catchorg/Catch2)
+最典型的当属C++的标准模板库STL, 其他例子还有[Catch2:一个C++测试库](https://github.com/catchorg/Catch2)
 
 还可以想象一下什么库可以这样分发?
 
@@ -133,9 +133,81 @@ ffmpeg是一个比较稳定,同时应用广泛的库,基本上各个linux发行�
 比如[Tencent-TNN-opencl依赖-lib](https://github.com/Tencent/TNN/tree/master/third_party/opencl/lib),居然直接把动态库放到了仓库内.
 
 1. 将二进制文件放入仓库,会导致版本管理仓库体积迅速膨胀-二进制文件难以压缩.
-2. 通常使用这类方式后,对应的`3rdparty/${deps_name}`里面会只有`include`,`lib`两个文件夹,这样看似简洁,但是丧失了库与源文件之间的关联性,负责任的开发者也许还会标注一下编译出库的环境(包括但不限于系统发行版,gcc版本,编译选项),对应的库的提交(commit-hash),以及自己对第三方库做的改造;短视的开发者什么都不留.这导致对这个库的升级变成了一项玄学: 根本不知道到底之前是怎么编译出来的,又应该怎么对这个`lib*.so`,`lib*.a`进行替换升级
+2. 通常使用这类方式后,对应的`3rdparty/${deps_name}`里面会只有`include`,`lib`两个文件夹,这样看似简洁,但是丧失了库与源文件之间的关联性,负责任的开发者也许还会标注一下编译出库的环境(包括但不限于系统发行版,gcc版本,编译选项),对应的库的提交(commit-hash),以及自己对第三方库做的改造; 短视的开发者什么都不留, 这导致对这个库的升级变成了一项玄学: 根本不知道到底之前是怎么编译出来的,又应该怎么对这个`lib*.so`,`lib*.a`进行替换升级
 
-## TODO-架构布局
+## 一种可行的构建方式
+
+简要介绍一些一种可行的中型C++项目构建方式, 目标是制作出一个Docker镜像.
+
+### 锁定依赖版本
+
+使用submodule方式, 没对上游进行修改则直接使用github源, 否则自己维护一个本地的${version}-patch分支, 记录好打上去的补丁.
+
+### 构建依赖
+
+最外层使用一层Makefile,
+
+``` makefile
+DEPS_NAME_1: DEPS_NAME_0 DEPS_NAME_a
+    $(BASH) ./third_party/DEPS_NAME_1.build.sh
+```
+
+中间层是`./third_party/DEPS_NAME_1.build.sh`
+
+``` bash
+#!/usr/bin/env bash
+set -euox pipefail
+main() {
+    podman build \
+        -f \
+          $(pwd)/third_party/DEPS_NAME_1.containerfile
+        --ignorefile \
+          $(pwd)/third_party/DEPS_NAME_1.container.ignore
+        .
+}
+main
+```
+
+这里`build.sh`, `containerfile`, `container.ignore`三个文件享有共同的前缀, 将他们指定为同一个依赖的构建脚本.
+
++ `build.sh`负责封装入口命令, 避免指令外漏到Makefile, 使得指令变更污染Makefile的git记录
++ `containerfile`负责封装底层构建命令, 使用容器机制控制隔离构建过程中依赖之间的互相联系, 只允许显式COPY其他依赖的二进制.
++ `container.ignore`负责将几乎其他依赖包排除出构建, 只允许依赖的源码进入仓库, 通过podman的构建缓存机制来cache构建结果.
+
++ 最底层为`./third_party/DEPS_NAME_1.containerfile`, 和最外层makefile共享相同的依赖关系.
+
+``` Dockerfile
+FROM prefix/DEPS_NAME_0 as DEPS_NAME_0
+FROM prefix/DEPS_NAME_a as DEPS_NAME_a
+COPY --from=DEPS_NAME_0 /home/DEPS_NAME_0 /home/DEPS_NAME_0
+COPY --from=DEPS_NAME_a /home/DEPS_NAME_a /home/DEPS_NAME_a
+
+COPY ./third_party/DEPS_NAME_1 /home/DEPS_NAME_1
+
+RUN cmake \
+    -S . \
+    -B ./build \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX="/home/DEPS_NAME_1/output" \
+    && cd /home/DEPS_NAME_1/build \
+    && cmake \
+        --build . \
+        --config Release \
+        --parallel \
+        -DCMAKE_INSTALL_PREFIX="/home/DEPS_NAME_1/output" \
+    && make install \
+    && tree /home/DEPS_NAME_1/output
+```
+
+最重要的是把install路径隔离在一个独立的文件夹中, 避免构建链出现不明确的依赖.
+
+经过这样一个个的三件套互相依赖, 最终会形成一个Makefile的依赖树, 一个Containerfile的COPY依赖树.
+
+### 维护上层应用的构建
+
+没特殊需求的话使用Modern-CMake. 依赖库提供了`Find*.cmake`最好, 可以使用`FIND`系指令; 没有的话, 后退一步, 使用PkgConfig来读取, 还不行就手动构建`INTERFACE-Target`, 最后在CMake里面再组织一次依赖树.
+
+最终外层应用的构建也可以用上面的三件套式构建法, 这里会出现大量的COPY语句(全是依赖), 也别忘了把install目标挪到`appops`目录下面, 只有库才会在/home下面.
 
 ## 结论
 

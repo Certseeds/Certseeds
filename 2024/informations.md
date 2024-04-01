@@ -70,3 +70,5 @@ TODO: 有没有可能在提交过程中, 使用gpg对博文进行签名, 之后�
 4. 推荐使用邮件客户端Thunderbird来订阅OPML, 它将博文和邮件用几乎相同的方式处理, 很适合长期保存; 由于内核也是个浏览器, 阅读体验也不错.
 
 firefox会给每个rss一个文件夹, 可能是考虑到一个网站会提供多个rss, 比如订阅视频网站上的多个up主; feedbro默认的opml则更简单, 平铺在一起.
+
+备注: thunderbird在support页面上介绍的opml导入方式(比如<https://support.mozilla.org/en-US/questions/1412164>中提到的)在thunderbird较新版本中行不通(不管中文/英文), 工具-导入界面都无法导入opml文件; 正确的导入方式是在rss的账户处右键, 点击订阅, 在弹出来的"订阅收取点"处, 使用右下角导入/导出功能.

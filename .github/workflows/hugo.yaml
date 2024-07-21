@@ -14,6 +14,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
     env:
       HUGO_CACHEDIR: /tmp/hugo_cache
     steps:
@@ -62,22 +63,39 @@ jobs:
           echo 'placeholder: "2022? 2021? 2077?"' >> ./content/search.md
           echo '---' >> ./content/search.md
 
-      - name: Build
-        run: hugo --minify
+      - name: Build and move public to github-public
+        run: |
+          hugo --minify
+          mv ./public ./github-public
+
+      - name: build for cf-pages
+        run: |
+          sed -i 's/blog.certseeds.com/cfblog.certseeds.com/g' ./hugo.toml
+          hugo --minify
+          mv ./public ./cf-public
 
       - name: add public.key
         run: |
-          cp ./public.key ./public/public.key
-
+          cp ./public.key ./github-public/public.key
+          cp ./public.key ./cf-public/public.key
       - name: robots.txt
         run: |
-          cp ./robots.txt ./public/robots.txt
+          cp ./robots.txt ./github-public/robots.txt
+          cp ./robots.txt ./cf-public/robots.txt
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./github-public
 
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
+          directory: ./cf-public
+          branch: main
   # Deployment job
   deploy:
     # Add a dependency to the build job

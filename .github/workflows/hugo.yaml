@@ -82,6 +82,7 @@ jobs:
         run: |
           cp ./robots.txt ./github-public/robots.txt
           cp ./robots.txt ./cf-public/robots.txt
+          sed -i 's/blog.certseeds.com/cfblog.certseeds.com/g' ./cf-public/robots.txt
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,6 +1,7 @@
 ---
 author: "Certseeds"
 date: "2024-07-21"
+lastmod: "2024-07-29"
 title: "something about firefox-extensions"
 description: "有关firefox扩展的两三事"
 tags: ["firefox", "frontend"]
@@ -157,3 +158,16 @@ if(header.name.toLowerCase() == 'cf-ray') {
 还以为有多动态, 没想到就是个简单的映射, 很实用, 可以直观的看页面是不是走的cf.
 
 另外备注: 浏览器扩展跨平台应该写起来没那么麻烦, 但是得开发者来搞, 有的API是能跨, 有的不能, 得搭建环境去测试.
+
+## thunderbird的扩展导出
+
+1. 指定thunderbird能够打开devtools, 在它的user.js中配置(thunderbird更新频率低, 不需要硬链接之类的操作)
+
+``` js
+user_pref("devtools.chrome.enabled", true);
+user_pref("devtools.debugger.remote-enabled", true);
+```
+
+2. 打开扩展页面, Ctrl+Shift+I 打开devtools
+3. 全页面搜索关键字, 找到扩展部分, 直接将`<div id="main" current-view="list">`部分复制出页面, 单独存为html.
+4. 打开新文档, 调用上面的脚本, 得到一份扩展列表.

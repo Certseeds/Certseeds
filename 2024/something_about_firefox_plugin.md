@@ -25,9 +25,10 @@ const r = $$('addon-card').map(
   }
 )
 
-let parts = []
+let parts = [`<dl>`]
 for(let ext of r) {
   parts.push(`<dt><a href="https://addons.mozilla.org/firefox/addon/${encodeURIComponent(ext.id)}/">${ext.title}</a></dt>\n<dd>${ext.desc}</dd>`)
+parts.push(`</dl>`)
 }
 
 console.log(parts.join('\n')) // copilot
@@ -50,11 +51,12 @@ for(let element of r){
   }
   )
 }
-const parts = [];
+const parts = [`<dl>`];
 for (let ext of elements) {
   const url = `https://addons.mozilla.org/firefox/addon/${encodeURIComponent(ext.id)}/`;
   parts.push(`<dt><a href="${url}">${ext.title}</a></dt>\n<dd>${ext.desc}</dd>`);
 }
+parts.push(`</dl>`);
 console.log(parts.join('\n'));
 ```
 
@@ -109,13 +111,14 @@ async function getFinalURL(url) {
   }
 }
 async function fetchFinalURLs(elements) {
-  const parts = [];
+  const parts = [`<dl>`];
   for (let ext of elements) {
     const url = `https://addons.mozilla.org/firefox/addon/${encodeURIComponent(ext.id)}/`;
     const finalURL = await getFinalURL(url);
     console.log(`${url} was transferred to ${finalURL}`);
     parts.push(`<dt><a href="${finalURL}">${ext.title}</a></dt>\n<dd>${ext.desc}</dd>`);
   }
+  parts.push(`</dl>`);
   console.log(parts.join('\n'));
 }
 

@@ -90,13 +90,12 @@ jobs:
           path: ./github-public
 
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
-          directory: ./cf-public
-          branch: main
+          command: pages deploy ./cf-public  --branch="main" --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} --commit-dirty=true
+
   # Deployment job
   deploy:
     # Add a dependency to the build job

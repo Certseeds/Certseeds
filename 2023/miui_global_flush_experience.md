@@ -9,6 +9,8 @@ tags: ["Android", "miui", "experience"]
 
 # MIUI global flush experience
 
+**IMPORTANT**: THIS ARTICLE IS *DEPRECATED*, THE HYPEROS CAN NOT BE TRUST ANYMORE, PLEASE DO NOT USE IT!(unless you buy it in india, euorpe or malaysia)
+
 it's time to get a new mobile phone, however, the mainland-MIUI can not be trusted because of what they had done, fortunately, we have another choice: the MIUI-global that design for oversea devices.
 
 this short article do not record the full workflow, only pay attention to some import points.

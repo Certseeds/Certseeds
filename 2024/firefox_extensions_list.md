@@ -1,7 +1,7 @@
 ---
 author: "Certseeds"
 date: "2024-07-29"
-lastmod: "2024-08-15"
+lastmod: "2024-08-20"
 title: "firefox-extensions list 2024"
 description: "firefox扩展列表-2024"
 tags: ["firefox", "frontend", "backup"]
@@ -27,6 +27,7 @@ tags: ["firefox", "frontend", "backup"]
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/font-fingerprint-defender/">Font Fingerprint Defender</a></dt><dd>Defending against Font fingerprinting by reporting a fake value.</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/happy-bonobo-disable-webrtc/">Disable WebRTC</a></dt><dd>Disables WebRTC consistently.</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/indicatetls/">IndicateTLS</a></dt><dd>在地址栏当中展示TLS版本信息。</dd>
+        <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/json-lite/">JSON Lite</a></dt><dd>Fast JSON viewer - highlights, shows items count/size, handles large files</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/localcdn-fork-of-decentraleyes/">LocalCDN</a></dt><dd>通过将请求重定向到本地资源，以保护你免于 CDN（内容分发网络）的跟踪。</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/">Firefox Multi-Account Containers</a></dt><dd>Multi-Account Containers 可让您临时或永久地以指定身份打开生活中的网站（小号多开）。名称和颜色皆可自定义，助您分门别类地管理各种活动 — 网络购物、旅行规化、收发工作邮件等等。</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/osmos-memo/">osmos::memo</a></dt><dd>An in-browser bookmark manager with easy tagging and fast recall</dd>
@@ -38,7 +39,8 @@ tags: ["firefox", "frontend", "backup"]
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/support%40z-lib.se/">Z-Library Finder</a></dt><dd>Access Z-Library in just one click. Our extension will redirect you to an available library website in seconds.</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/">Proxy SwitchyOmega</a></dt><dd>轻松快捷地管理和切换多个代理设置。</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/">TWP - Translate Web Pages</a></dt><dd>使用 Google 或 Yandex 实时翻译您的页面。</dd>
-        <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/uBlock0%40raymondhill.net/">uBlock Origin</a></dt><dd>一款高效的网络请求过滤工具，占用极低的内存和 CPU。</dd>
+        <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/ublacklist/">uBlacklist</a></dt><dd>在谷歌的搜索结果中屏蔽特定的网站显示。</dd>
+        <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">uBlock Origin</a></dt><dd>一款高效的网络请求过滤工具，占用极低的内存和 CPU。</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/url-to-qrcode/">URL to QR code</a></dt><dd>Converts the tab URL to QR code.</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/">暴力猴</a></dt><dd>一个开源的用户脚本管理器，支持很多浏览器</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/webgl-fingerprint-defender/">WebGL Fingerprint Defender</a></dt><dd>Defending against WebGL fingerprinting by reporting a fake value.</dd>

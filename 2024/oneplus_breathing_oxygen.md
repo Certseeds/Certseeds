@@ -1,7 +1,7 @@
 ---
 author: "Certseeds"
 date: "2024-08-17"
-lastmod: "2024-08-18"
+lastmod: "2024-08-20"
 title: "oneplus_breathing_oxygen"
 description: "log of breathing oxygen on oneplus"
 tags: ["Android", "OxygenOS", "experience"]
@@ -102,17 +102,6 @@ the oplusstanvbk_a and oplusstanvbk_b are same, rename one of them to oplusstanv
 3. prepare a copyable `adb-fastboot` folder(from pre steps), maybe you need to another machine to run it.
 4. prepare fastboot_driver_64.exe, same reason to with 3.
 5. for `adb-fastboot` folder, copy and rename dst folder to `flash_op_odct`
-
-``` bash
-# maybe not same with cmd or powershell
-## write flash double important file script.
-echo 'fastboot flash oplusstanvbk oplusstanvbk.img' > ./flash_double.bat
-echo 'fastboot flash ocdt ocdt.img' >> ./flash_double.bat
-## write reboot script
-echo 'adb reboot fastboot' > ./reboot_fastboot.bat
-```
-
-
 6. download a `ocdt.img` from oxygen os(call it `ocdt-oss.img`), it's only for flashing, you still need your own ocdt.img after update system to target-newest.
 
 now the floder struct looks like
@@ -223,8 +212,9 @@ $ cd ~/oss/flash_op_odct
 $ cp YOUR_BACKUPED_IMG_FILES/ocdt.img ./ocdt.img
 $ cp YOUR_BACKUPED_IMG_FILES/oplusstanvbk.img ./oplusstanvbk.img
 $ or you can using the oplusstanvbk.img from download `flash-with-one-button`
-$ ./reboot_fastboot.bat && echo 'then will reboot to recovery state'
-$ ./flash_double.bat
+$ adb reboot fastboot && echo 'then will reboot to recovery state'
+$ fastboot flash oplusstanvbk oplusstanvbk.img
+$ fastboot flash ocdt ocdt.img
 ```
 
 in the flash_double stage, the script maybe output "\<waiting for any devices\>"

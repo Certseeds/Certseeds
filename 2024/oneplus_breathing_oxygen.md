@@ -1,7 +1,7 @@
 ---
 author: "Certseeds"
 date: "2024-08-17"
-lastmod: "2024-08-20"
+lastmod: "2024-08-21"
 title: "oneplus_breathing_oxygen"
 description: "log of breathing oxygen on oneplus"
 tags: ["Android", "OxygenOS", "experience"]
@@ -122,9 +122,9 @@ tree -L 1
 
 ``` bash
 $ cd ~/oss
-$ mkdir 001
+$ mkdir backup
 $ pwd
-~/oss/001
+~/oss/backup
 $ cp YOUR_BACKUPED_IMG_FILES/ocdt.img ./ocdt.img
 $ cd ..
 $ pwd
@@ -133,10 +133,10 @@ $ unzip ./OFP.zip ./OFP
 $ cd ./OFP/IMAGES
 $ pwd
 ~/oss/OFP/IMAGES
-$ cp ./init_boot.img ~/oss/001/init_boot.img
+$ cp ./init_boot.img ~/oss/backup/init_boot.img
 $ echo 'if you want to flash with root, do the patching tasks and rename it from magick_patched-xxx.img to init_boot.img'
-$ cp ./prog_firehose_ddr.elf ~/oss/001/prog_firehose_ddr.elf
-$ cd ~/oss/001
+$ cp ./prog_firehose_ddr.elf ~/oss/backup/prog_firehose_ddr.elf
+$ cd ~/oss/backup
 $ tree
 .
 ├── ocdt.img (from your device backup)
@@ -151,7 +151,7 @@ pwd
 ~/oss
 tree -L 1
 .
-├── 001
+├── backup
 ├── old9008flash.zip
 ├── Oneplus11-9008Flash
 ├── adb-fastboot
@@ -192,8 +192,8 @@ $ sudo ./open_flashing_tool.bat
 + trun on default-nation-code
 
 ``` bash
-$ cp ~/oss/001/ocdt.img ~/oss/OFP/IMAGES/ocdt.img
-$ cp ~/oss/001/init_boot.img ~/oss/OFP/IMAGES/init_boot.img
+$ cp ~/oss/backup/ocdt.img ~/oss/OFP/IMAGES/ocdt.img
+$ cp ~/oss/backup/init_boot.img ~/oss/OFP/IMAGES/init_boot.img
 $ cp ~/oss/Oneplus11-9008Flash/prog_firehose_ddr.elf ~/oss/OFP/prog_firehose_ddr.elf
 ```
 

@@ -28,6 +28,19 @@ meta.toml的介绍可以参考<https://vitebooks.certseeds.com/warhammer40k/depe
 
 在编写了meta.toml后, 很明显, 这个文件内部的元数据不仅仅可以供人工阅读, 还可以让代码来解析, 以便生成更多的页面, 于是就有了depage子页面.
 
+### rust-msvc
+
+rust的msvc-target需要本机安装一些包, 从<https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/>下载vs_Buildtool.exe, 之后在单个组件中选中以下工具, 其他都可以不选.
+
++ [x] Windows 通用C运行时
++ [x] C++生成工具核心功能
++ [x] MSVC v(${biggest})- VS ${version} C++ x64/x86生成工具(最新)
++ [x] Windows 11/10 SDK(${biggest})
++ [x] C++核心功能
++ [x] 适用于Windows的C++ Clang编译器(${biggest})
+
+安装, 之后重启命令行, 重启vscode, rustcover, 测试构建.
+
 ### rustydep
 
 近期翻到不止一次rust-wasm的信息, 因此决定这次拿rust-wasm来试水, 据说rust在target为wasm时工具链很好用, 因此使用rust初始化了rustydep项目.

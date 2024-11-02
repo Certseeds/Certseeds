@@ -43,7 +43,7 @@ rust的msvc-target需要本机安装一些包, 从<https://visualstudio.microsof
 
 ### rustydep
 
-近期翻到不止一次rust-wasm的信息, 因此决定这次拿rust-wasm来试水, 据说rust在target为wasm时工具链很好用, 因此使用rust初始化了rustydep项目.
+之前一直想用rust-wasm来让浏览器支持将图片数组转化为webp动图, 但是一直鸽着, 因此决定这次拿rust-wasm来试水, 再加上据说rust在target为wasm时工具链很好用, 因此使用rust初始化了rustydep项目.
 
 由于rust和js之间的交互耗费性能, rust-wasm的导出函数中一般除了输出和输入之外, 内部没有和js的交互; 再加上跨语言的bind问题, rust中的结构体得额外加入一些tag来和js端的数据结构对应, 还不如输入是Uint8Array, 输出是一个json来的简单.
 

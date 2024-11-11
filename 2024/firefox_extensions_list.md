@@ -16,7 +16,7 @@ tags: ["firefox", "frontend", "backup"]
 <code>
     <dl>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/">CanvasBlocker</a></dt><dd>改变某些 JavaScript API 来阻止跟踪。</dd>
-        <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/cf-pop/">我在访问哪个 Cloudflare® 数据中心？</a></dt><dd>显示正在访问的 Cloudflare® 名称信息Main icon made by Freepik from www.flaticon.com is licensed by CC 3.0 BY</dd>
+        <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/cdn-pop/">CDN POP</a></dt><dd>Adds a badge that shows which CDN and CDN POP the current page is being loaded from.</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/clearurls/">ClearURLs</a></dt><dd>从 URL 中移除跟踪元素。</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/dont-track-me-google1/">Don't track me Google</a></dt><dd>Removes the annoying link-conversion at Google Search/maps/...</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/epubreader/">EPUBReader</a></dt><dd>直接以浏览器开启epub书档</dd>
@@ -50,7 +50,7 @@ tags: ["firefox", "frontend", "backup"]
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/%7B94249bf3-29a3-4bb5-aa30-013883e8f2f4%7D/">Canvas Fingerprint Defender</a></dt><dd>Defending against Canvas fingerprinting by reporting a fake value.</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/%7Bab0ae774-f22f-479b-9b1b-6aff11bf6f5c%7D/">AudioContext Fingerprint Defender</a></dt><dd>Defending against AudioContext fingerprinting by reporting a fake value.</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/braavos-wallet/">Braavos</a></dt><dd>适用于 Starknet 的 Braavos 智能钱包可以轻松管理您的资产并从您的浏览器安全地访问去中心化应用程序。</dd>
-        <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/cdn-pop/">CDN POP</a></dt><dd>Adds a badge that shows which CDN and CDN POP the current page is being loaded from.</dd>
+        <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/cf-pop/">我在访问哪个 Cloudflare® 数据中心？</a></dt><dd>显示正在访问的 Cloudflare® 名称信息Main icon made by Freepik from www.flaticon.com is licensed by CC 3.0 BY</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/">Decentraleyes</a></dt><dd>保护您免受集中式的内容交付网络（CDN）的跟踪。</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/">FoxyProxy</a></dt><dd>易于使用，适用于任何人的高级代理管理工具</dd>
         <dt><a href="https://addons.mozilla.org/en-US/firefox/addon/to-google-translate/">To Google Translate 谷歌快译</a></dt><dd>选中文本，用谷歌翻译或收听发音。</dd>

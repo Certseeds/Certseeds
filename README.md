@@ -38,16 +38,15 @@ I'm Certseeds
 ### Frontend
 
 <div align="center">
-  <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vue/vue.png" alt="vue" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" alt="JavaScript" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png" alt="typescript" height="50" />
   <picture>
     <source type="image/avif" srcset="https://raw.githubusercontent.com/CSS-Next/logo.css/refs/heads/main/primary/css.avif"/>
-    <source type="image/webp" srcset="https://raw.githubusercontent.com/CSS-Next/logo.css/refs/heads/main/primary/css.webp"/>
-    <img style="margin: 10px" src="https://raw.githubusercontent.com/CSS-Next/logo.css/refs/heads/main/primary/css.png" alt="CSS" height="50" />
+    <img style="margin: 10px" src="https://raw.githubusercontent.com/CSS-Next/logo.css/refs/heads/main/primary/css.webp" alt="CSS" height="50" />
   </picture>
   <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" alt="HTML5" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/WebAssembly/web-assembly-logo/refs/heads/main/dist/icon/web-assembly-icon-64px.png" alt="WebAssembly" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vue/vue.png" alt="vue" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/latex/latex.png" alt="LaTex" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/w3c/logos/refs/heads/main/browser-logos/node.js/node.js_64x64.png" alt="lua" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/8eaa4711f3b6015070483ff1c3b707292304efe4/topics/chrome-extension/chrome-extension.png" alt="chrome-extension" height="50" />

@@ -51,7 +51,7 @@ disableFingerprinting = true
 favicon = "https://avatars.githubusercontent.com/u/51754303?s=40"
 favicon16x16 = "https://avatars.githubusercontent.com/u/51754303?s=16"
 favicon32x32 = "https://avatars.githubusercontent.com/u/51754303?s=32"
-apple_touch_icon = "https://avatars.githubusercontent.com/u/51754303?s=24>"
+apple_touch_icon = "https://avatars.githubusercontent.com/u/51754303?s=24"
 safari_pinned_tab = "https://avatars.githubusercontent.com/u/51754303?s=24"
 
 [params.label]

@@ -28,7 +28,7 @@ tags: ["frontend", "fonts", "icon"]
 
 随后迁移到了svgtofont, 这个包有人维护体验不要太好, 作者能很坚决的否定没有必要的功能, 并在非常快的时间内予以回复, 并且也不拒绝合理的文档更新. (虽然库内有些代码风格比较老旧, 在将最低版本要求限制到node18之后其实可以rewrite一把优化阅读代码体验的.)
 
-在处理up主产出png的过程中, 一直在用imageMagick转换图标为pnm格式, 送入potrace来将其自动转换为svg格式, 并结合svg的`--export-plain-svg`手段做过滤, 最后用xmllint格式化, 但是问题在于inkscape总是会加入一些多余的attributes, xmllint格式化也不怎么样, 之后看下有没有nodejs的解决方案. (TODO)
+在处理up主产出png的过程中, 一直在用imageMagick转换图标为pnm格式, 送入potrace来将其自动转换为svg格式, 并结合inkscape的`--export-plain-svg`手段做过滤, 最后用xmllint格式化, 但是问题在于inkscape总是会加入一些多余的attributes, xmllint格式化也不怎么样, 之后看下有没有nodejs的解决方案. (DONE, svgo虽然确实有效, 但是有些图片处理之后无法再被svg2font处理, 不再进行尝试)
 
 拿到svg之后还可以用采色器摘取png的颜色, fill到svg的每一个path里面, 不过这也是有局限的, 如果svg里面一个path和图像的一部分不对应就不行了, 只能保持黑色了. 尝试过可视化编辑的就能感受到, 一个一个的使用inkscape来处理太消耗时间了, 不是一个合适的解决方案.
 

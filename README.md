@@ -25,7 +25,7 @@ I'm Certseeds
 
 <div>
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Certseeds&layout=compact" alt="Top Langs">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Certseeds&layout=compact&exclude_repo=graphicsmagick" alt="Top Langs">
   </a>
 </div>
 

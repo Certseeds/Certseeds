@@ -36,32 +36,8 @@ jobs:
           hugo-version: '0.139.4'
           extended: true
 
-      - name: move files to content
-        run: |
-          mkdir -p ./content/posts
-          mv ./2021 ./content/posts/
-          mv ./2022 ./content/posts/
-          mv ./2023 ./content/posts/
-          mv ./2024 ./content/posts/
-          mv ./LICENSE.md ./content/posts/
-          mv ./README.md ./content/posts/
-          mv ./README.words.md ./content/posts/
-
-      - name: archive
-        run: |
-          echo '---' > ./content/archives.md
-          echo 'title: "Archive"' >> ./content/archives.md
-          echo 'layout: "archives"' >> ./content/archives.md
-          echo 'summary: "archives"' >> ./content/archives.md
-          echo '---' >> ./content/archives.md
-      - name: search
-        run: |
-          echo '---' > ./content/search.md
-          echo 'title: "Search"' >> ./content/search.md
-          echo 'layout: "search"' >> ./content/search.md
-          echo 'summary: "search"' >> ./content/search.md
-          echo 'placeholder: "2022? 2021? 2077?"' >> ./content/search.md
-          echo '---' >> ./content/search.md
+      - name: prepare shell
+        run: bash ./.github/blog.sh
 
       - name: Build and move public to github-public
         run: |

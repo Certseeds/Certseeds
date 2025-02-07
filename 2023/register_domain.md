@@ -2,8 +2,8 @@
 author: "Certseeds"
 date: "2023-07-09"
 title: "register_domain"
-description: "在cloudflare上申请,管理域名"
-tags: ["cloudflare", "security", "dns"]
+description: "在cloudflare上申请, 管理域名"
+tags: ["cloudflare", "security", "business"]
 ---
 
 # register_domain

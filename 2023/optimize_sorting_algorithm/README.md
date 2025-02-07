@@ -31,7 +31,7 @@ for integral types.
 
 简介里面出现了强化学习, 由此可见, 这个PR基本是以结果出发的.
 
-原始的sort3如下, 模板, 宏之类的暂且不论, 只看函数体, compare都采用 std::less<>(auto lhs,auto rhs){return lhs < rhs;}
+原始的sort3如下, 模板, 宏之类的暂且不论, 只看函数体, compare都采用 `std::less<>(auto lhs,auto rhs){return lhs < rhs;}`
 
 它的功能是把{1,2,3}的全排列给归一化成[1,2,3]
 
@@ -72,7 +72,6 @@ __sort3(_ForwardIterator __x, _ForwardIterator __y, _ForwardIterator __z, _Compa
     return __r;
 }
 ```
-
 
 sort3的情况比较方便枚举, 直接枚举一下每种场景的操作.
 
@@ -138,7 +137,7 @@ swap可以认为是三次赋值, 合计起来就是三次cmp, 六次赋值.
 
 注: 汇编是`command $dst $src`,有的还会更改env里面的寄存器
 
-``` x86asm
+``` asm
 // code block 1
 __sort3(int*, int*, int*, std::less<int>):             # @__sort3(int*, int*, int*, std::less<int>)
         mov     r8d, dword ptr [rsi]
@@ -184,7 +183,7 @@ __sort3(int*, int*, int*, std::less<int>):             # @__sort3(int*, int*, in
 
 原始的sort3对应的汇编可以说不堪入目, 即使注释掉_r
 
-``` x86asm
+``` asm
 // code block 1, remove value_type _r
 __sort3(int*, int*, int*, std::less<int>):             # @__sort3(int*, int*, int*, std::less<int>)
         mov     ecx, dword ptr [rsi]
@@ -226,7 +225,7 @@ __sort3(int*, int*, int*, std::less<int>):             # @__sort3(int*, int*, in
 
 如果用了__cond_swap优化的之后的朴素三次cond_swap
 
-从mov里面可以读出来, ``
+从mov里面可以读出来,
 
 ``` asm
 // __cond_swap单函数
@@ -308,7 +307,7 @@ __sort3_branchless(int* x, int* y, int* z, std::__1::less<int>): # @__sort3_bran
         mov     dword ptr [rdi], edx          | 把临时寄存器$edx的值装回x                         // *__x = __tmp;
 ```
 
-这里倒不是因为什么算法的优化, 单纯是之后也没读取[rdi], 这里写入没有意义.
+这里倒不是因为什么算法的优化, 单纯是之后也没读取`[rdi]`, 这里写入没有意义.
 
 应该是因为写法, 链接里没有这么频繁的读写内存, 重分配寄存器, 导致这里汇编和链接上的不一样.
 
@@ -327,23 +326,23 @@ TODO: 解析swap3的汇编代码
 + `[1,2,3], [2,1,3] , [3,1,2]` 一步
 + `[1,2,3], [2,1,3],[3,1,3]` // 操作只有半步
 + `[1,2,3]` // 复用上一步的中间变量
-  + 如果std::min(z,x) = x < y
+  + 如果std::min(z,x) = `x < y`
     + 则match情况1
-  + 如果std::min(z,x) = z < y, 不可能, 借助上一步的判断去除了一种可能性
+  + 如果std::min(z,x) = `z < y`, 不可能, 借助上一步的判断去除了一种可能性
   + 如果std::min(z,x) = x > z > y,
     + 则match情况3
   + 如果std::min(z,x) = x > y,
     + 则match情况2
 
-  + 如果x < y, 这里可以用上一步的中间变量, std::min(z,x);
+  + 如果`x < y`, 这里可以用上一步的中间变量, std::min(z,x);
     直接都不用动
   + 如果std::min(z,x) > y,match情况2,3, 这里仍然可以走通.
     + x就得取y
-    + 如果上一步没有操作, 这一步是[2,1,3]
+    + 如果上一步没有操作, 这一步是`[2, 1, 3]`
       + 则y需要取x
-    + 如果上一步操作成了[3,1,3]
+    + 如果上一步操作成了`[3, 1, 3]`
       + 则y就得赋值成z
-    + 而上一步是否操作又是因为x,z之间比大小决定的, 这里y可以直接取std::min(x,z),复用变量.
+    + 而上一步是否操作又是因为x,z之间比大小决定的, 这里y可以直接取`std::min(x,z)`,复用变量.
     + 三种情况又被映射回了两种操作
 
 并且由于最后一步中存在都不用动这一种选择, 优化时cmovp会有几率都不执行, 相对操作数更少.
@@ -362,7 +361,6 @@ TODO: 解析swap3的汇编代码
 ```
 
 经过调整之后, 把语句对应起来是这样的. 可见其实差别在中间的语句
-
 
 ## conclusion
 
@@ -397,4 +395,4 @@ come from <https://danlark.org/2022/04/20/changing-stdsort-at-googles-scale-and-
   + 解决问题确实需要能力, 但是这需要问题被显式的定义出来, 这可能才是最大的能力.
 + 人们倾向于认为这种小问题已经被优化完了, "低垂的果实已经被摘尽了"
   + deepmind扬唇一笑, 舌头一卷把树皮都呼噜下来了.
-  + 完了, <del>小序列排序的汇编优化被做到了西历2077年, 没油水可榨了.</del>
+  + 完了, ~~小序列排序的汇编优化被做到了西历2077年, 没油水可榨了.~~

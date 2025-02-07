@@ -4,7 +4,7 @@ date: "2024-09-30"
 lastmod: "2024-10-08"
 title: "make_a_wonderful_deal"
 description: "你应该如何进行一次无懈可击的二手交易?"
-tags: ["deal", "experience"]
+tags: ["notes", "experience"]
 ---
 
 # make a wonderful deal

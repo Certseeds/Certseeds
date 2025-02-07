@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2023-02-14"
 title: "hugo github-pages搭建博客"
 description: "build page by hugo"
-tags: ["go", "frontend", "hugo"]
+tags: ["go", "frontend", "blog"]
 ---
 
 # hugo github-pages搭建博客

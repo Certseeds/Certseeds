@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-10-20"
 title: "vitebooks_and_depage"
 description: "vitepress建站以及依赖项页面"
-tags: ["frontend", "rust", "book"]
+tags: ["frontend", "nodejs", "reading"]
 ---
 
 # vitepress建站以及构建依赖页面

@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2022-05-14"
 title: "能从guava中学到什么"
 description: "what can we learn from guava"
-tags: ["java", "guava", "experience"]
+tags: ["java", "software_engineering", "experience"]
 ---
 
 

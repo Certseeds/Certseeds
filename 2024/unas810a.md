@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-06-02"
 title: "U-NAS 810A Chassis customize hardware"
 description: "万由810A机箱的硬件选择."
-tags: ["hardware", "log", "business"]
+tags: ["hardware", "experience", "business"]
 ---
 
 # 万由810A机箱的硬件选择

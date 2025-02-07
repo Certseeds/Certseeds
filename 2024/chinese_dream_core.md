@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-05-09"
 title: "中式梦核一例"
 description: "a short reading note of Le Voleur d'ombres"
-tags: ["book", "description"]
+tags: ["dream"]
 ---
 
 # 中式梦核

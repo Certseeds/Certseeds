@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-08-10"
 title: "使用包管理器下载并使用whisper"
 description: "download and using whisper via python-package-manager"
-tags: ["python", "package-manager", "ASR"]
+tags: ["python", "software_engineering", "open-source"]
 ---
 
 # 使用包管理器下载并使用whisper模型

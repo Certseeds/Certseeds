@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2023-07-22"
 title: "plan_visit_hongkong"
 description: "hongkong plan"
-tags: ["notes", "plan", "lts"]
+tags: ["notes", "visit", "experience"]
 ---
 
 # plan to go to hongkong

@@ -2,7 +2,7 @@ name: github pages
 
 on:
   push:
-    branches: [ "master" ] # TODO
+    branches: [ "master" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
 
@@ -15,62 +15,63 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: github-pages
-    env:
-      HUGO_CACHEDIR: /tmp/hugo_cache
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 1
+          fetch-depth: 0
 
-      - uses: actions/cache@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          path: ${{ env.HUGO_CACHEDIR }}
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-hugomod-
+          version: 9
+          run_install: false
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          hugo-version: '0.139.4'
-          extended: true
+          node-version: 22
+          cache: 'pnpm'
 
-      - name: prepare shell
-        run: bash ./.github/blog.sh
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: Build and move public to github-public
+      - name: Build and move
+        env:
+          RUN_NUMBER: ${{ github.run_number }}
         run: |
-          hugo --minify
-          mv ./public ./github-public
+          echo 'Run number: $RUN_NUMBER'
+          pnpm run docs:build
+          cp ./.vitepress/dist ./.vitepress/dist-github
 
       - name: build for cf-pages
         run: |
-          sed -i 's/blog.certseeds.com/cfblog.certseeds.com/g' ./hugo.toml
-          hugo --minify
-          mv ./public ./cf-public
+          sed -i 's/blog.certseeds.com/cfblog.certseeds.com/g' ./.vitepress/config.mts
+          pnpm run docs:build
+          cp ./.vitepress/dist ./.vitepress/dist-cf
 
       - name: add public.key
         run: |
-          cp ./public.key ./github-public/public.key
-          cp ./public.key ./cf-public/public.key
+          cp ./public.key ./.vitepress/dist-github/public.key
+          cp ./public.key ./.vitepress/dist-cf/public.key
+
       - name: robots.txt
         run: |
-          cp ./robots.txt ./github-public/robots.txt
-          cp ./robots.txt ./cf-public/robots.txt
+          cp ./robots.txt ./.vitepress/dist-github/robots.txt
+          cp ./robots.txt ./.vitepress/dist-cf/robots.txt
           sed -i 's/blog.certseeds.com/cfblog.certseeds.com/g' ./cf-public/robots.txt
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./github-public
+          path: ./.vitepress/dist-github
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./cf-public  --branch="main" --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} --commit-dirty=true
+          command: pages deploy ./.vitepress/dist-cf  --branch="main" --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} --commit-dirty=true
 
   # Deployment job
   deploy:

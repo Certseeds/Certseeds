@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2022-05-29"
 title: "Immutable与其使用"
 description: "immutable and usage"
-tags: ["java", "immutable"]
+tags: ["java", "software_engineering"]
 ---
 
 # Immutable及其使用

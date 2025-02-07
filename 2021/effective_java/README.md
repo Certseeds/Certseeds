@@ -14,7 +14,7 @@ tags: ["java","effective" ]
 
 1. 可以带名称. number.problemPrime(min,max)比number(min,max,random)+注释的方式容易理解的多.
 2. 可以在调用时缓存对象. 比如Boolean.valueOf(boolean)其实只会返回两个对象,一个True,一个False.
-3. 可以返回子类型的对象. 这一点在`List.of()`中体现的最为突出,其返回值的类型为`ListN<E>`,继承于`AbstractImmutableList -> AbstractImmutableCollection -> AbstractCollection -> Collection`,实现了List<E>接口.
+3. 可以返回子类型的对象. 这一点在`List.of()`中体现的最为突出,其返回值的类型为`ListN<E>`,继承于`AbstractImmutableList -> AbstractImmutableCollection -> AbstractCollection -> Collection`,实现了`List<E>`接口.
 4. 返回的对象的类可以随着每次调用发生变化. 这一条在`List.of()`中也非常明显,在无参数,参数大于两个时,返回值的类型时`ListN<E>`,但是当只有一个或者两个参数时,返回值的类型为`List12<E>`,在继承关系上与`ListN<E>`平级.
 5. 方法返回的对象所属的类,在编写包含该静态方法所属的类的时候可以不存在. 返回的类可以通过依赖注入等方式进行构造.
 
@@ -215,9 +215,9 @@ public class rule10_equals {
 2. 判断了类是否相同(顺带检查了null)
 3. 转换参数为正确类型(如果用了带有模式匹配的新JDK,就可以整合到2)
 4. 判断了每个关键域
-5. 天然满足对称性,自反性,传递性,一致性,非空性.
+5. 天然满足对称性, 自反性, 传递性, 一致性, 非空性.
 
-hashCode也满足了对于相同对象散列码相同的特性,顺带还基于不可变实现了hashcode初始化求值,
+hashCode也满足了对于相同对象散列码相同的特性, 顺带还基于不可变实现了hashcode初始化求值
 
 ### 03-13 clone接口
 
@@ -421,7 +421,7 @@ PS: 顺带一提,返回private数组是一个常见错误,因为这只令数组�
 
 ## chapter 05 泛型
 
-[泛型](http://blog.certseeds.com/posts/2021/effective_java/chapter05)
+[泛型](http://blog.certseeds.com/2021/effective_java/chapter05)
 
 
 ## Chapter 12 序列化
@@ -432,17 +432,24 @@ PS: 顺带一提,返回private数组是一个常见错误,因为这只令数组�
 
 最典型的莫过于HashMap嵌套问题,
 
-假设有2n+1个对象,</br>
-根对象左节点,右节点分别为1st,2nd</br>
-1st的左节点为3rd,右节点4th,而2nd的左右节点与1st相同</br>
-3rd的左节点为5th,右节点6th,而4th的左右节点与3st相同</br>
+假设有2n+1个对象
+
+根对象左节点,右节点分别为1st,2nd
+
+1st的左节点为3rd,右节点4th,而2nd的左右节点与1st相同
+
+3rd的左节点为5th,右节点6th,而4th的左右节点与3st相同
+
 相当于每一层只有两个节点,但是每一层的每个节点都被上一层的每个节点当作左节点或右节点.
+
 这样层层嵌套下去,只需要2n+1个对象,就构造出了高达2^n个对象,导致时间爆炸.
 
 解决方案是什么呢?
+
 答案是使用json等简单格式,但是json是怎么处理嵌套问题攻击呢?
 
-答案是没有处理,但是json格式如果对应上述的层层嵌套对象,那么首先对应的 需要解析的字符串就会超级长,在这一点上,json格式无法表达引用这一点反而成为了优势,因为这强迫使得json格式的输入规模与输出规模相匹配,反序列化炸弹自己在输入规模上就露馅了.
+答案是没有处理, 但是json格式如果对应上述的层层嵌套对象, 那么首先对应的 需要解析的字符串就会超级长, 在这一点上, json格式无法表达引用这一点反而成为了优势, 因为这强迫使得json格式的输入规模与输出规模相匹配, 反序列化炸弹自己在输入规模上就露馅了.
+
 *PS:fastjson似乎有引用这一feature,很好奇他们对此的意见*
 
 由于反序列化这一过程涉及到了完全无法预计的引用,所以最好**不要使用**反序列化,应该用json或者protobuf代替.

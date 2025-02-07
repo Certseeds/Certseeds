@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-03-03"
 title: "pingora, a rust library for replace nginx"
 description: "pingora, 取代nginx的rust库"
-tags: ["cache", "paper", "github"]
+tags: ["reading", "paper", "github"]
 ---
 
 本文聚焦于pingora, 试图从相关的文章与仓库中挖掘出尽量多的信息.

@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2022-05-14"
 title: "记一次删除bin目录"
 description: "action log for rm -rf /bin"
-tags: ["experience", "dangerous"]
+tags: ["experience", "notes"]
 ---
 
 # 记一次删除`/bin`
@@ -14,7 +14,7 @@ tags: ["experience", "dangerous"]
 
 `/usr/docker/`下面的结构大概是
 
-``` tree
+``` bash
 .
 ..
 docker-20.10.9

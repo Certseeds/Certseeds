@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-05-07"
 title: "春物-完书评"
 description: "a short conclusion of OreGaiur Year Three"
-tags: ["book", "description"]
+tags: ["reading", "description"]
 ---
 
 # 春物-完书评

@@ -55,3 +55,4 @@ hugo.linux
 # End of https://www.toptal.com/developers/gitignore/api/audio,video,docz,hugo
 *.ignore.md
 content
+node_modules

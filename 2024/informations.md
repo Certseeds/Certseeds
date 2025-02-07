@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-03-20"
 title: "Build credible information channels"
 description: "构建可信的信息渠道"
-tags: ["blog", "frontend", "information"]
+tags: ["blog", "frontend", "security"]
 ---
 
 # 构建可信的信息渠道
@@ -12,7 +12,7 @@ tags: ["blog", "frontend", "information"]
 
 ## 博客
 
-这一部分请参考: <https://blog.certseeds.com/posts/2023/build_page_by_hugo/>
+这一部分请参考: <https://blog.certseeds.com/2023/build_page_by_hugo/>
 
 ## 在静态网站中提供mastodon服务
 

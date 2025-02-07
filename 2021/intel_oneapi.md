@@ -4,7 +4,7 @@ license: "CC-BY-NC-SA-4.0 or any later version"
 date: "2021-09-05"
 title: "intel oneapi"
 description: "intel oneapi"
-tags: ["cpp", "intel"]
+tags: ["cpp", "compiler", "effective"]
 ---
 
 # intel-oneapi

@@ -1,4 +1,5 @@
 ---
+top: true
 author: "Certseeds"
 title: "README"
 date: "2022-05-12"
@@ -32,7 +33,7 @@ I'm Certseeds
 ## My Skill Set
 
 <table>
-
+<tbody>
 <tr><td valign="top" width="33%">
 
 ### Frontend
@@ -80,4 +81,6 @@ I'm Certseeds
   <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/githubactions/githubactions-original.svg" alt="github-actions" height="50" />
 </div>
 
-</td></tr></table>
+</td></tr>
+</tbody>
+</table>

@@ -46,7 +46,7 @@ tags: ["linux", "dotfiles"]
 
 ### subfolder: git
 
-``` tree
+``` bash
 ├── .gitattributes
 ├── .gitignore
 ├── README.md
@@ -63,7 +63,7 @@ tags: ["linux", "dotfiles"]
 
 git子文件夹,主要保存git与ssh相关文件,.gitconfig,.ssh.config为template产生,gitcommit被用于产生git commit Message(通常情况下,这种模板有助于有意义的git commit message)
 
-``` git
+``` bash
 
 </subject>
 
@@ -84,7 +84,7 @@ Branch:
 
 ### subfolder: key
 
-``` tree
+``` bash
 ├── key
 │   ├── .gitignore
 │   ├── README.md
@@ -98,7 +98,7 @@ Branch:
 
 ### subfolder: lang
 
-``` tree
+``` bash
 ├── lang
 │   ├── .condarc
 │   ├── .gitignore
@@ -117,7 +117,7 @@ Branch:
 
 ### subfolder: ubuntu
 
-``` tree
+``` bash
 ├── ubuntu
 │   ├── linux.sh
 │   ├── proxychains4.conf
@@ -139,7 +139,7 @@ Branch:
 
 ### subfolder: wsl
 
-``` tree
+``` bash
 ├── wsl
 │   ├── init.wsl
 │   ├── linux.sh
@@ -151,7 +151,7 @@ Branch:
 
 ### subfolder: zsh
 
-``` tree
+``` bash
 └── zsh
 │   ├── .LD_LIBRARY_PATH.sh
 │   ├── .conda.sh -> ~/dotfiles/zsh/anaconda3.sh
@@ -170,7 +170,7 @@ Branch:
 
 ### subfolder: powsh and script
 
-``` tree
+``` bash
 ├── powsh
 │   ├── .gitattributes
 │   ├── .poshtheme.json

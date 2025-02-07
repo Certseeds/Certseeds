@@ -4,7 +4,7 @@ date: "2024-12-29"
 lastmod: "2024-12-29"
 title: "2024年总结"
 description: "Conslusion of 2024"
-tags: ["notes", "expreience"]
+tags: ["notes", "experience"]
 ---
 
 # 2024年总结

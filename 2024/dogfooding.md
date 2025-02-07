@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2024-12-17"
 title: "dogfooding"
 description: "自己发布库自己使用实在是太棒了"
-tags: ["frontend", "fonts", "icon"]
+tags: ["frontend", "github", "nodejs"]
 ---
 
 # dog fooding

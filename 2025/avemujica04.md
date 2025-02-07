@@ -4,7 +4,7 @@ date: "2025-01-25"
 lastmod: "2025-01-25"
 title: "Ave-Mujica-04-阅后体验"
 description: "看完了Avu Mujica谈谈观看体验"
-tags: ["anime", "expreience"]
+tags: ["anime", "experience"]
 ---
 
 # Ave-Mujica 第四集观影体验

@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2022-11-14"
 title: "tag and release"
 description: "rtag and release"
-tags: ["exoperience", "git"]
+tags: ["experience", "git"]
 ---
 
 

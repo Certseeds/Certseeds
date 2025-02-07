@@ -21,6 +21,12 @@
 *.sh text eol=lf
 *.bat text eol=crlf
 
+# js, ts
+*.js eol=lf
+*.ts eol=lf
+*.mjs eol=lf
+*.mts eol=lf
+
 
 # These files are text and should be normalized (Convert crlf => lf)
 *.css           text diff=css

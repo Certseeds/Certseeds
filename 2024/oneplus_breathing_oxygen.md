@@ -4,7 +4,7 @@ date: "2024-08-17"
 lastmod: "2024-08-21"
 title: "oneplus_breathing_oxygen"
 description: "log of breathing oxygen on oneplus"
-tags: ["Android", "OxygenOS", "experience"]
+tags: ["Android", "flushing-system", "experience"]
 ---
 
 # oneplus_breathing_oxygen

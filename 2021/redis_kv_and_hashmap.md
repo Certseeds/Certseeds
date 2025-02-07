@@ -4,7 +4,7 @@ license: "CC-BY-NC-SA-4.0 or any later version"
 date: "2021-08-11"
 title: "Redis中的K-V实现与Java中的哈希表对比"
 description: "redis kv and hashmap"
-tags: ["redis", "c", "java"]
+tags: ["redis", "java"]
 ---
 
 # Redis中的K-V实现与Java中的哈希表对比

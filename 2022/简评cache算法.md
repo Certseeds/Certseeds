@@ -3,7 +3,7 @@ author: "Certseeds"
 date: "2022-02-03"
 title: "简评cache算法"
 description: "talking about cache-algorithm"
-tags: ["cpp", "cache"]
+tags: ["cpp", "reading", "notes"]
 ---
 
 # 简评cache算法

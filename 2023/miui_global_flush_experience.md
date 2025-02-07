@@ -4,7 +4,7 @@ date: "2023-03-19"
 lastmod: "2024-08-18"
 title: "MIUI global flush experience"
 description: "MIUI global flush step by step"
-tags: ["Android", "miui", "experience"]
+tags: ["Android", "flushing-system", "experience"]
 ---
 
 # MIUI global flush experience

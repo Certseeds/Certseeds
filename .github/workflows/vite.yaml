@@ -42,13 +42,13 @@ jobs:
         run: |
           echo 'Run number: $RUN_NUMBER'
           pnpm run docs:build
-          cp ./.vitepress/dist ./.vitepress/dist-github
+          cp -r ./.vitepress/dist ./.vitepress/dist-github
 
       - name: build for cf-pages
         run: |
           sed -i 's/blog.certseeds.com/cfblog.certseeds.com/g' ./.vitepress/config.mts
           pnpm run docs:build
-          cp ./.vitepress/dist ./.vitepress/dist-cf
+          cp -r ./.vitepress/dist ./.vitepress/dist-cf
 
       - name: add public.key
         run: |

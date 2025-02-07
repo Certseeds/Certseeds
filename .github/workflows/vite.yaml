@@ -59,7 +59,7 @@ jobs:
         run: |
           cp ./robots.txt ./.vitepress/dist-github/robots.txt
           cp ./robots.txt ./.vitepress/dist-cf/robots.txt
-          sed -i 's/blog.certseeds.com/cfblog.certseeds.com/g' ./cf-public/robots.txt
+          sed -i 's/blog.certseeds.com/cfblog.certseeds.com/g' ./.vitepress/dist-cf/robots.txt
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

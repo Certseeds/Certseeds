@@ -8,13 +8,13 @@ const author = 'Certseeds';
 const title = `${author} Blog`;
 const hostURL = 'https://blog.certseeds.com';
 const image = "https://avatars.githubusercontent.com/u/51754303";
-const copyright = `2021-${new Date().getFullYear()} Certseeds publish this document based on CC BY-NC-SA 4.0(or any later version)`;
+const copyright = `2021-${new Date().getFullYear()} ${author} publish this document based on CC BY-NC-SA 4.0(or any later version)`;
 const RSS: RSSOptions = {
     title: title,
     baseUrl: hostURL,
     copyright: copyright,
     language: language,
-    description: "Recent content on Certseeds Blog",
+    description: `Recent content on ${author} Blog`,
     filename: "index.xml",
 }
 const prevnextMap = data;
@@ -72,7 +72,7 @@ export default defineConfig({
         ['meta', { property: 'twitter:description', content: title }],
         ['meta', { property: 'keywords', content: 'vitepress, nodejs, blog' }],
         ['meta', { property: 'robots', content: 'index, follow' }],
-        ['meta', { property: 'author', content: 'Certseeds' }],
+        ['meta', { property: 'author', content: `${author}` }],
     ],
     markdown: {
         config: (md) => {

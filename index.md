@@ -4,6 +4,7 @@ title: archive page
 date: "2025-02-01"
 summary: the root page of blog
 description: the root page of blog
+publish: false
 ---
 
 <div>
@@ -79,12 +80,14 @@ const scrollToBottom = () => {
            :key="index"
            class="post-entry">
     <header class="entry-header">
-      <h2 class="entry-hint-parent">
-        {{ post.frontmatter.title }}
-      </h2>
-      <h3>
-        {{ post.frontmatter.description}}
-      </h3>
+      <div class="vp-raw">
+        <h2 class="entry-hint-parent">
+          {{ post.frontmatter.title }}
+        </h2>
+        <h3>
+          {{ post.frontmatter.description}}
+        </h3>
+      </div>
     </header>
     <div class="entry-content">
       <p>{{ post.frontmatter.preContent }}</p>

@@ -72,8 +72,9 @@ async function generateNavigationMap() {
         const wordCount = engWords + cnWords + numbers;
         frontmatter.set("wordCount", wordCount);
         // console.log(frontmatter.get("title"), frontmatter.get("date"))
+        const filePathWithoutPoint = path.relative('.', filePath).split(path.sep).join('/');;
         return {
-            url: filePath,
+            url: filePathWithoutPoint,
             path: filePath,
             frontmatter,
             title: frontmatter.get("title")?.trim() ?? "Untitled"

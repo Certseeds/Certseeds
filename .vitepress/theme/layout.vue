@@ -1,18 +1,25 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
 const { Layout } = DefaultTheme;
 const { frontmatter} = useData();
 // console.log(frontmatter.value);
-const dateStr = ref(frontmatter.value.date);
-const dateInZhCN = ref(new Date(dateStr.value).toLocaleDateString('zh-CN', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-}));
-const wordCount = ref(frontmatter.value.wordCount);
-const readingTime = ref(Math.ceil(wordCount.value / 200));
+const dateStr = ref('');
+const dateInZhCN = ref('');
+const wordCount = ref(0);
+const readingTime = ref(0);
+
+watchEffect(() => {
+    dateStr.value = frontmatter.value.date;
+    dateInZhCN.value = new Date(frontmatter.value.date).toLocaleDateString('zh-CN', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    wordCount.value = frontmatter.value.wordCount;
+    readingTime.value = Math.ceil(wordCount.value / 200);
+});
 // console.log(page.value);
 </script>
 

@@ -1,5 +1,6 @@
-import { defineConfig} from 'vitepress'
+import { defineConfig } from 'vitepress'
 import mdFootnote from "markdown-it-footnote"
+
 import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
 import { data } from './prevnext.data.js';
 
@@ -76,8 +77,9 @@ export default defineConfig({
     ],
     markdown: {
         config: (md) => {
-            md.use(mdFootnote)
+            md.use(mdFootnote);
         },
+        math: true
     },
     sitemap: {
         hostname: hostURL

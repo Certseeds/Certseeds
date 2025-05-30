@@ -82,7 +82,15 @@ export default defineConfig({
         math: true
     },
     sitemap: {
-        hostname: hostURL
+        hostname: hostURL,
+        transformItems: (items) => {
+            // 添加新项目或修改/筛选现有选项
+            items.push({
+                url: '/huge.gz',
+                lastmod: `${new Date().toISOString()}`,
+            })
+            return items
+        }
     },
     lastUpdated: true,
     metaChunk: true,

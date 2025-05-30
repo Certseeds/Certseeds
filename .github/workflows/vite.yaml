@@ -36,6 +36,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: prepare public files
+        run: |
+          dd if=/dev/zero bs=1G count=10 | gzip -c > ./public/huge.gz
+
       - name: Build and move
         env:
           RUN_NUMBER: ${{ github.run_number }}

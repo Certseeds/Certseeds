@@ -53,6 +53,10 @@ tags: ["notes", "experience"]
 
 并且这样的输出, 在使用json-format-output时, `temperature = 0`时都会出现, 难以相信会出现这种劣质问题, 这个问题在qwen2.5上完全不会出现
 
+**UPDATE 2**
+
+发现不仅是">", 就连一些没有人名的句子输入进去也会产生无限输出.
+
 ### 视觉识别
 
 > 现在存在<https://github.com/iamarunbrahma/vision-parse>这种库

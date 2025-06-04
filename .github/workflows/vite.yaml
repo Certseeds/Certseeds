@@ -38,6 +38,7 @@ jobs:
 
       - name: prepare public files
         run: |
+          mkdir -p ./public
           dd if=/dev/zero bs=1G count=10 | gzip -c > ./public/huge.gz
 
       - name: Build and move

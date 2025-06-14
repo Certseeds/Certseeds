@@ -1,7 +1,7 @@
 ---
 author: "Certseeds"
 date: "2025-06-09"
-lastmod: "2025-06-09"
+lastmod: "2025-06-14"
 title: "将markdown+latex渲染为pdf"
 description: "render markdown with latex to pdf"
 tags: ["notes", "experience", "js"]
@@ -18,7 +18,7 @@ tags: ["notes", "experience", "js"]
 3. 需要将 `\begin{array}{ccc|c}`里面的cc数量对齐, 下面每一行有x个&, 这里就得有 x+1个c
 4. `\begin{array}{ccc:c}`里面不能用`:`, 只能用`|`
 5. 不能使用 `\tag{}`, 建议用 `\quad \quad \quad (1)`
-6. 不推荐使用`\left(`, `\right)` 建议替换为 `(`, `)`
+6. ~~不推荐使用`\left(`, `\right)` 建议替换为 `(`, `)`~~, `\left(` 对`\begin{array}`等场景下依然不可取代, 其他场景可以替换
 7. `\right\rvert\` 替换为 `\right|`
 
 都替换完成后pdf的渲染效果可以达到目标了, 体积比对html还有优势, 这确实是意外之喜.

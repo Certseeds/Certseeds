@@ -16,9 +16,15 @@ tags: ["frontend", "nodejs", "reading"]
 
 新开一个文件夹之后, 初始化了git仓库, 这种文本类项目就应该加入版本管理. 当markdown拆分结束后, 发现在vscodeo中阅读黑色背景的小说有点难以接受, 就使用vitepress来提供将markdown转换成静态页面,一不做二不休, 顺便将其发布到pages上, 于是就有了[vitebooks](https://vitebooks.certseeds.com/). github pages的总大小上限是1G, 按当前容量测算大概1本书0.5-1M, 绝对能把荷鲁斯叛乱系列都放进去.
 
-在论坛上多逛一下, 发现了另一个回复, 内部包括电子书原文归档, 还额外包括一张图, 包括大部分书的依赖关系, 比如无所畏惧前置推荐阅读深渊之战, 军团以及异端初现三本, 整个是一张有向无环图. 据此准备在阅读过程中, 除了markdown的转化, 还要进行meta.toml的编写, 以便后续处理.
+在论坛上多逛一下, 发现了另一个回复, 内部包括电子书原文归档, 还额外包括一张图, 包括大部分书的依赖关系, 比如 '无所畏惧' 前置推荐阅读 '深渊之战', '军团' 以及 '异端初现' 三本, 整个是一张有向无环图. 据此准备在阅读过程中, 除了markdown的转化, 还要进行meta.toml的编写, 以便后续处理.
 
-meta.toml的介绍可以参考<https://vitebooks.certseeds.com/warhammer40k/dependencies>; 除了原文之外, 每本书还包括一个organize.md, 用于介绍书籍组织结构; 一个meta.md, 放置一些元数据, 比如译者, 整理者, 原始平台URL等; 一个base.md, 用来放置序章, 副标题, 简介以及人名等信息.
+meta.toml的介绍可以参考<https://vitebooks.certseeds.com/warhammer40k/dependencies>
+
+除了原文之外, 每本书还包括
+
+1. 一个organize.md, 用于介绍书籍组织结构
+2. 一个meta.md, 放置一些元数据, 比如译者, 整理者, 原始平台URL等
+3. 一个base.md, 用来放置序章, 副标题, 简介以及人名等信息.
 
 ## goserver
 

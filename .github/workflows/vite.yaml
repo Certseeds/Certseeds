@@ -39,7 +39,11 @@ jobs:
       - name: prepare public files
         run: |
           mkdir -p ./public
-          dd if=/dev/zero bs=1G count=10 | gzip -c > ./public/huge.gz
+          dd if=/dev/urandom bs=1k count=1 | gzip > ./public/ldquq.gz
+          dd if=/dev/urandom bs=1k count=1 | gzip > ./public/qq.gz
+          dd if=/dev/zero bs=1G count=10 | gzip -c > ./public/kassa.gz
+          tar -czf ./public/huge.tgz ./public/ldquq.gz ./public/qq.gz ./public/kassa.gz
+          rm ./public/ldquq.gz ./public/qq.gz ./public/kassa.gz
 
       - name: Build and move
         env:

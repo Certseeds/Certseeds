@@ -61,19 +61,34 @@ export default defineConfig({
         }
     },
     head: [
+        // 基础SEO meta标签
+        ['meta', { name: 'description', content: title }],
+        ['meta', { name: 'keywords', content: 'vitepress, nodejs, blog' }],
+        ['meta', { name: 'author', content: `${author}` }],
+        ['meta', { name: 'robots', content: 'index, follow' }],
+        ['meta', { name: 'format-detection', content: 'telephone=no' }],
+        
+        // OpenGraph meta标签
         ['meta', { property: 'og:type', content: 'website' }],
         ['meta', { property: 'og:locale', content: language }],
         ['meta', { property: 'og:title', content: title }],
         ['meta', { property: 'og:site_name', content: title }],
+        ['meta', { property: 'og:description', content: title }],
         ['meta', { property: 'og:image', content: image }],
+        ['meta', { property: 'og:image:width', content: '1200' }],
+        ['meta', { property: 'og:image:height', content: '630' }],
+        ['meta', { property: 'og:image:alt', content: `${author} Blog Logo` }],
         ['meta', { property: 'og:url', content: hostURL }],
-        ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
-        ['meta', { property: 'twitter:title', content: title }],
-        ['meta', { property: 'twitter:image', content: image }],
-        ['meta', { property: 'twitter:description', content: title }],
-        ['meta', { property: 'keywords', content: 'vitepress, nodejs, blog' }],
-        ['meta', { property: 'robots', content: 'index, follow' }],
-        ['meta', { property: 'author', content: `${author}` }],
+        
+        // Twitter Card meta标签
+        ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+        ['meta', { name: 'twitter:title', content: title }],
+        ['meta', { name: 'twitter:image', content: image }],
+        ['meta', { name: 'twitter:description', content: title }],
+        
+        // 其他优化标签
+        ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'RSS Feed', href: `${hostURL}/index.xml` }],
+        ['meta', { name: 'generator', content: 'VitePress' }],
     ],
     markdown: {
         config: (md) => {

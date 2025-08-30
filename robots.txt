@@ -42,5 +42,4 @@ Allow: /
 User-agent: *
 Disallow: /
 
-crawl-delay: 60
 Sitemap: https://blog.certseeds.com/sitemap.xml

@@ -8,6 +8,7 @@ const language = "zh-CN";
 const author = 'Certseeds';
 const title = `${author} Blog`;
 const hostURL = 'https://blog.certseeds.com';
+const unreplaceURL = 'https://blog.certseeds.' + 'com'; // 备份网页URL
 const image = "https://avatars.githubusercontent.com/u/51754303";
 const copyright = `2021-${new Date().getFullYear()} ${author} publish this document based on CC BY-NC-SA 4.0(or any later version)`;
 const RSS: RSSOptions = {
@@ -109,6 +110,15 @@ export default defineConfig({
     },
     lastUpdated: true,
     metaChunk: true,
+    transformHead: ({ pageData }) => {
+        const head: any[] = [];
+        
+        // 为每个页面动态生成 canonical URL
+        const canonicalUrl = `${unreplaceURL}/${pageData.relativePath.replace(/\.md$/, '.html')}`;
+        head.push(['link', { rel: 'canonical', href: canonicalUrl }]);
+        
+        return head;
+    },
     transformPageData(pageData) {
         console.log("transformPageData called for:", pageData.relativePath);
         const prevnext = prevnextMap.get(pageData.relativePath);

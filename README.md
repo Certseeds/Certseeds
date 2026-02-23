@@ -49,6 +49,10 @@ I'm Certseeds
   <img style="margin: 10px" src="https://raw.githubusercontent.com/w3c/logos/refs/heads/main/browser-logos/node.js/node.js_64x64.png" alt="NodeJS" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/8eaa4711f3b6015070483ff1c3b707292304efe4/topics/chrome-extension/chrome-extension.png" alt="chrome-extension" height="50" />
   <img style="margin: 10px" src="https://vite.dev/logo.svg" alt="Vite logo" height="50" >
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/vitepress.svg" alt="VitePress" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/astro/astro-original.svg" alt="Astro" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/svelte/svelte-original.svg" alt="Svelte" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/tampermonkey.svg" alt="Tampermonkey" height="50" />
 </div>
 
 </td><td valign="top" width="33%">
@@ -65,6 +69,9 @@ I'm Certseeds
   <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/lua/lua.png" alt="lua" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/cmake/cmake-original.svg" alt="cmake" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/nginx/nginx-original.svg" alt="nginx" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/apachekafka/apachekafka-original.svg" alt="Kafka" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/redis/redis-original.svg" alt="Redis" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/spring/spring-original.svg" alt="Spring" height="50" />
 </div>
 
 </td><td valign="top" width="33%">
@@ -79,6 +86,9 @@ I'm Certseeds
   <img style="margin: 10px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png" alt="docker" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/podman/podman-original.svg" alt="podman" height="50" />
   <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/githubactions/githubactions-original.svg" alt="github-actions" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/githubpages.svg" alt="GitHub Pages" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/cloudflarepages.svg" alt="Cloudflare Pages" height="50" />
+  <img style="margin: 10px" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/cloudflareworkers/cloudflareworkers-original-wordmark.svg" alt="Cloudflare Workers" height="50" />
 </div>
 
 </td></tr>

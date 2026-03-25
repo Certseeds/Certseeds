@@ -2,15 +2,26 @@
 set -euox pipefail
 main() {
     local input_file="${1}"
-    gpg -s \
+    gpg \
+        -s \
+        --digest-algo SHA512 \
+        --personal-digest-preferences SHA512 \
         -e \
+        --cipher-algo AES256 \
+        --personal-cipher-preferences AES256 \
         --armor \
+        --force-aead \
+        --force-v4-certs \
+        --compression-algo none \
         -o "${input_file}".sign.encry \
         -R 7E7FD8B565F042312DAB81D5DC568E1504A44CF3 \
         "${input_file}"
     # -s: sign by your key
     # -e encry
     # --armor output ascii-format file
+    # --digest-algo SHA512: specify signature algorithm
+    # --cipher-algo AES256: specify encryption algorithm
+    # --compress-algo none: disable compression
     # -o output file
     # -R let encry use my pubkey's fingerprint, find my pubkey to encry and do not put keyID in result
     # final line is input file

@@ -19,14 +19,14 @@ importers:
         specifier: ^4.3.2
         version: 4.3.2
       postcss:
-        specifier: ^8.5.15
-        version: 8.5.15
+        specifier: ^8.5.23
+        version: 8.5.23
       vitepress:
         specifier: 2.0.0-alpha.17
-        version: 2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.15)
+        version: 2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.23)
       vitepress-plugin-rss:
         specifier: ^0.4.4
-        version: 0.4.4(vitepress@2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.15))
+        version: 0.4.4(vitepress@2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.23))
 
 packages:
 
@@ -907,8 +907,8 @@ packages:
   mj-context-menu@0.6.1:
     resolution: {integrity: sha512-7NO5s6n10TIV96d4g2uDpG7ZDpIhMh0QNfGdJw/W47JswFcosz457wqz/b5sAKvl12sxINGFCn80NZHKwxQEXA==}
 
-  nanoid@3.3.12:
-    resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
+  nanoid@3.3.18:
+    resolution: {integrity: sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -950,8 +950,8 @@ packages:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
 
-  postcss@8.5.15:
-    resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
+  postcss@8.5.23:
+    resolution: {integrity: sha512-g50586zr4bZmwFiTlflMu8E0bDTb5I5gertgwAKmsdUlTQIhZtunzUlD1WSzwcVWPoAVpsrA6vlfCD7oXvRwgg==}
     engines: {node: ^10 || ^12 || >=14}
 
   property-information@7.2.0:
@@ -1538,7 +1538,7 @@ snapshots:
       '@vue/shared': 3.5.35
       estree-walker: 2.0.2
       magic-string: 0.30.21
-      postcss: 8.5.15
+      postcss: 8.5.23
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.35':
@@ -1881,7 +1881,7 @@ snapshots:
 
   mj-context-menu@0.6.1: {}
 
-  nanoid@3.3.12: {}
+  nanoid@3.3.18: {}
 
   node-fetch@2.7.0:
     dependencies:
@@ -1913,9 +1913,9 @@ snapshots:
 
   picomatch@4.0.4: {}
 
-  postcss@8.5.15:
+  postcss@8.5.23:
     dependencies:
-      nanoid: 3.3.12
+      nanoid: 3.3.18
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -2093,21 +2093,21 @@ snapshots:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.4)
       picomatch: 4.0.4
-      postcss: 8.5.15
+      postcss: 8.5.23
       rollup: 4.61.0
       tinyglobby: 0.2.17
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitepress-plugin-rss@0.4.4(vitepress@2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.15)):
+  vitepress-plugin-rss@0.4.4(vitepress@2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.23)):
     dependencies:
       '@sugarat/theme-shared': 0.0.7
       feed: 5.2.1
       markdown-it-container: 4.0.0
       sharp: 0.34.5
-      vitepress: 2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.15)
+      vitepress: 2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.23)
 
-  vitepress@2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.15):
+  vitepress@2.0.0-alpha.17(markdown-it-mathjax3@4.3.2)(postcss@8.5.23):
     dependencies:
       '@docsearch/css': 4.6.3
       '@docsearch/js': 4.6.3
@@ -2130,7 +2130,7 @@ snapshots:
       vue: 3.5.35
     optionalDependencies:
       markdown-it-mathjax3: 4.3.2
-      postcss: 8.5.15
+      postcss: 8.5.23
     transitivePeerDependencies:
       - '@types/node'
       - async-validator

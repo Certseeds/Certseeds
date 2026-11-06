@@ -15,7 +15,7 @@ publish: false
 
 <script setup>
 import {ref, computed} from "vue";
-import { data } from '.vitepress/posts.data.js';
+import { data } from './.vitepress/posts.data.js';
 
 const posts = ref([]);
 const originalPosts = ref(data);

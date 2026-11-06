@@ -17,14 +17,14 @@
     "author": "Certseeds",
     "license": "CC-BY-NC-SA-4.0 And AGPL-v3.0-or-later",
     "dependencies": {
-        "vue": "^3.5.42"
+        "vue": "^3.5.44"
     },
     "devDependencies": {
         "markdown-it-footnote": "^4.0.0",
         "markdown-it-mathjax3": "^4.3.2",
-        "postcss": "^8.5.28",
-        "vitepress": "2.0.0-alpha.17",
-        "vitepress-plugin-rss": "^0.4.4"
+        "postcss": "^8.5.32",
+        "vitepress": "2.0.0-alpha.21",
+        "vitepress-plugin-rss": "^0.4.5"
     },
     "pnpm": {
         "supportedArchitectures": {
